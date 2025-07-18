@@ -104,8 +104,8 @@ public class LoginPageDefinitions {
         }
     }
 
-    @When("Inicia sesión con sus credenciales invalidas contraseña")
-    public void iniciaSesionConSusCredencialesInvalidasContraseña() throws IOException {
+    @When("Inicia sesión con sus credenciales invalidas clave")
+    public void iniciaSesionConSusCredencialesInvalidasClave() throws IOException {
         String rutaCsv = "src/test/resources/data/Login/credenciales-invvalidas-contrasena.csv";
         List<String[]> filas = CsvUtils.leer(rutaCsv);
 

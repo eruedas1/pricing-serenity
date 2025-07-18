@@ -1,33 +1,33 @@
 @all
 Feature: Inicio de sesión y acceso a Pricing
 
-  @ValidCredentials @ignore #caso 1
+  @ValidCredentials  #caso 1
   Scenario: Inicio de  sesión con credenciales validas
     Given "User" abre la página web
     When Inicia sesión con sus credenciales
     And Debe darle click al boton de pricing
     Then Debe iniciar sesion correctamente a pricing
 
-  @InValidCredentialsCorreo @ignore ##caso 2
-  Scenario: Inicio de  sesión con credenciales invalidas correo
+  @InValidCredentialsCorreo  ##caso 2
+  Scenario: Inicio de  sesión con correo invalido
     Given "User" abre la página web
     When Inicia sesión con sus credenciales invalidas correo
     Then Debe ver el mensaje de error "Invalid credentials"
 
-  @InValidCredentialsContraseña @ignore ##caso 3
-  Scenario: Inicio de  sesión con credenciales invalidas contraseña
+  @InValidCredentialsContraseña  ##caso 3
+  Scenario: Inicio de  sesión con clave invalida
     Given "User" abre la página web
-    When Inicia sesión con sus credenciales invalidas contraseña
+    When Inicia sesión con sus credenciales invalidas clave
     Then Debe ver el mensaje de error "Invalid credentials"
 
-  @BlankUsername @ignore  ##caso 4
+  @BlankUsername   ##caso 4
   Scenario: Inicio de sesión con nombre de usuario en blanco
     Given "User" abre la página web
     When Inicia sesión con sus credenciales correo en blanco
     Then Debe ver el mensaje de error "Required" debajo del nombre de usuario
 
   @BlankPassword ##caso 5
-  Scenario: Inicio de  sesión con contrasena en blanco
+  Scenario: Inicio de  sesión con clave en blanco
     Given "User" abre la página web
     When Intenta Iniciar sesión con sus credenciales contrasena en blanco
     Then Debe ver el mensaje de error "Required" debajo de la contrasena

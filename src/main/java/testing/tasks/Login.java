@@ -27,8 +27,14 @@ public class Login implements Task {
                 WaitUntil.the(LoginPage.INPUT_CORREO, isVisible()).forNoMoreThan(5).seconds(),
                 Enter.theValue(this.username).into(LoginPage.INPUT_CORREO),
                 Click.on(LoginPage.BOTON_SIGUIENTE),
-                WaitUntil.the(LoginPage.INPUT_PASSWORD, isVisible()).forNoMoreThan(10).seconds(),
-                Enter.theValue(this.password).into(LoginPage.INPUT_PASSWORD),
+                WaitUntil.the(LoginPage.INPUT_PASSWORD, isVisible()).forNoMoreThan(10).seconds()
+        );
+        if (this.password != null && !this.password.isEmpty()) {
+            actor.attemptsTo(
+                    Enter.theValue(this.password).into(LoginPage.INPUT_PASSWORD)
+            );
+        }
+        actor.attemptsTo(
                 Click.on(LoginPage.INICIO_SESION),
                 Click.on(LoginPage.BOTON_NO)
         );
