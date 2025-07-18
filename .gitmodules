@@ -1,0 +1,3 @@
+[submodule "pricing-serenity"]
+	path = pricing-serenity
+	url = https://github.com/usuario/pricing-serenity.git
