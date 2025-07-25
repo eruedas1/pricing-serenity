@@ -6,11 +6,11 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     * Tipo de identificacion del cliente :seleccionar Cedula
     * Cliente Especial o Codeudor : seleccionar NO
     Given  Que estoy en la pagina 1 de 4 del cotizador
-    When Diligencio el campo Tipo de identificacion del cliente: Cedula.
+    When Diligencio el campo Tipo de identificacion del cliente: Cedula
     And Cliente Especial o Codeudor : seleccionar NO
     And Rating Financiero Cliente: Seleccionar 4 numeros aleatorios
     And Doy click en Cargar Informacion
-    Then Click en continuar
+    Then Dar Click en continuar
 
 
   @Formulario ##caso 8 Cotizador Paso 1 de 4  Consorcio
@@ -19,12 +19,12 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     * Cliente Especial o Codeudor : seleccionar Consorcio
     * Tipo de Identificacion del consorciado: Cedula
     Given  Que estoy en la pagina 1 de 4 del cotizador
-    When Diligencio el campo Tipo de identificacion del cliente: Cedula.
+    When Diligencio el campo Tipo de identificacion del cliente: Cedula
     And Cliente Especial o Codeudor : seleccionar Consorcio
     And Tipo de Identificacion del consorciado: Cedula o NIT
     And Rating Financiero Cliente: Seleccionar 4 numeros aleatorios
     And Doy click en Cargar Informacion
-    Then Click en continuar
+    Then Dar click en el boton continuar
 
   @Formulario ##caso 9 Cotizador Paso 1 de 4  Fidecomiso
   Scenario: En la pagina 1 de 4 Cotizador
@@ -32,12 +32,12 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     * Cliente Especial o Codeudor : seleccionar Fidecomiso
     * Tipo de Identificacion del Fidecomitente: NIT.
     Given  Que estoy en la pagina 1 de 4 del cotizador
-    When Diligencio el campo Tipo de identificacion del cliente: Cedula.
+    When Diligencio el campo Tipo de identificacion del cliente: Cedula
     And Cliente Especial o Codeudor : seleccionar Fidecomiso
     And Tipo de Identificacion del Fidecomitente: Cedula o NIT
     And Rating Financiero Cliente: Seleccionar 4 numeros aleatorios
     And Doy click en Cargar Informacion
-    Then Click en continuar
+    Then Seleccionar en continuar
 
   @Formulario ##caso 10 Cotizador Paso 1 de 4   Patrimonio Autonomo
   Scenario: En la pagina 1 de 4 Cotizador
@@ -45,7 +45,7 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     * Cliente Especial o Codeudor : seleccionar Patrimonio Autonomo
     * Tipo de Identificacion del Fidecomitente: Cedula
     Given  Que estoy en la pagina 1 de 4 del cotizador
-    When Diligencio el campo Tipo de identificacion del cliente: Cedula.
+    When Diligencio el campo Tipo de identificacion del cliente: Cedula
     And Cliente Especial o Codeudor : seleccionar Patrimonio Autonomo
     And Tipo de Identificacion del Fidecomitente: Cedula o NIT
     And Rating Financiero Cliente: Seleccionar 4 numeros aleatorios
@@ -58,12 +58,12 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     * Cliente Especial o Codeudor : seleccionar Union Temporal
     * Tipo de Identificacion Unionista: NIT
     Given  Que estoy en la pagina 1 de 4 del cotizador
-    When Diligencio el campo Tipo de identificacion del cliente: Cedula.
+    When Diligencio el campo Tipo de identificacion del cliente: Cedula
     And Cliente Especial o Codeudor : seleccionar Union Temporal
     And Tipo de Identificacion del Unionista: Cedula o NIT
     And Rating Financiero Cliente: Seleccionar 4 numeros aleatorios
     And Doy click en Cargar Informacion
-    Then Click en continuar
+    Then Dar click en continuar
 
   @Formulario ##caso 12 Cotizador Paso 1 de 4  Pagador
   Scenario: En la pagina 1 de 4 Cotizador
@@ -71,12 +71,12 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     * Cliente Especial o Codeudor : seleccionar Pagador
     * Tipo de Identificacion Pagador: Cedula
     Given  Que estoy en la pagina 1 de 4 del cotizador
-    When Diligencio el campo Tipo de identificacion del cliente: Cedula.
+    When Diligencio el campo Tipo de identificacion del cliente: Cedula
     And Cliente Especial o Codeudor : seleccionar Pagador
     And Tipo de Identificacion del Pagador: Cedula o NIT
     And Rating Financiero Cliente: Seleccionar 4 numeros aleatorios
     And Doy click en Cargar Informacion
-    Then Click en continuar
+    Then  Oprimir click en continuar
 
   @Formulario ##caso 13 Cotizador Paso 1 de 4  Codeudor
   Scenario: En la pagina 1 de 4 Cotizador
@@ -84,12 +84,12 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     * Cliente Especial o Codeudor : seleccionar Codeudor
     * Tipo de Identificacion Codeudor: NIT
     Given  Que estoy en la pagina 1 de 4 del cotizador
-    When Diligencio el campo Tipo de identificacion del cliente: Cedula.
+    When Diligencio el campo Tipo de identificacion del cliente: Cedula
     And Cliente Especial o Codeudor : seleccionar Codeudor
     And Tipo de Identificacion del Codeudor: Cedula o NIT
     And Rating Financiero Cliente: Seleccionar 4 numeros aleatorios
     And Doy click en Cargar Informacion
-    Then Click en continuar
+    Then Seleccionar click en continuar
 
 
   @Formulario ##caso 14 Cotizador Paso 2 de 4
@@ -98,13 +98,13 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     When Diligencio el campo Valor Operacion
     And Seleccionar en el campo Sustitución y/o prórroga la opcion "SI"
     And Seleccionar en el campo Tipo de Operación "Constructor"
-    And Seleccionar en el campo Índice de Referencia "DTF"
+    And Seleccionar en el campo Indice de Referencia "DTF"
     And Diligenciar en el campo Tasa fija "30"
     And Diligenciar en el campo Plazo en meses "240"
     And Diligenciar en el campo Periodo de Gracia en meses "12"
     And Seleccionar en el campo Periodicidad pago de intereses "Mensual"
-    And Seleccionar en el campo Amortización de capital "Mensual"
-    And Seleccionar en el campo Tipo de garantía "Colateral Financiero"
+    And Seleccionar en el campo Amortizacion de capital "Mensual"
+    And Seleccionar en el campo Tipo de garantia "Colateral Financiero"
     And Diligenciar en el campo Valor de la garantía "30000"
     And Diligenciar en el campo Comisiones negociadas "5"
     And Seleccionar en el campo Corresponde a una campaña "Si"
