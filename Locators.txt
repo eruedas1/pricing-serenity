@@ -1,0 +1,68 @@
+COTIZADOR 1 DE 4:
+CEO: (//select[@id='ceo'])[1]
+TIPO DE IDENTIFICACION: (//select[@id='tipoIdentificacionCliente'])[1]
+IDENTIFICADOR: (//input[@id='identificacionCliente'])[1]
+SEGMENTO ESPECIAL O CODEUDOR: (//select[@id='tipoClienteEspecial'])[1]
+OBSERVADO: (//select[@class='input-form select-gen ng-pristine ng-valid ng-touched'])[1]
+PROYECTADO1: (//select)[5]
+PROYECTADO2: (//select)[6]
+PROYECTADO3: (//select)[7]
+CARGAR INFORMACION: bdb-at-btn bdb-at-btn--secondary bdb-at-btn--lg
+CONTINUAR: bdb-at-btn bdb-at-btn--secondary bdb-at-btn--lg
+
+COTIZADOR 2 DE 4:
+VALOR OPERACION: (//input[@id='valorOperacion'])[1]
+SUSTITUCION Y/O PRORROGA: (//select[@formcontrolname='sustitucion'])[1]
+TIPO DE OPERACION: (//select[@formcontrolname='tipoOperacion'])[1]
+INDICE DE REFERENCIA: (//select[@formcontrolname='indiceReferencia'])[1]
+TASA FIJA: (//input[@id='porcentajeSpread'])[1]
+PLAZO EN MESES: (//input[@formcontrolname='plazoMeses'])[1]
+PERIODO DE GRACIA EN MESES: (//input[@formcontrolname='periodoGracia'])[1]
+PERIODICIDAD PAGO DE INTERESES: (//select[@formcontrolname='pagoIntereses'])[1]
+AMORTIZACION DE CAPITAL: (//select[@formcontrolname='pagoIntereses'])[1]
+TIPO DE GARANTIA: (//select[@formcontrolname='tipoGarantia'])[1]
+VLOR DE LA GARANTIA: (//input[@id='valorGarantia'])[1]
+COMISIONES NEGOCIADAS: (//input[@id='porcentajeComisionesNegociadas'])[1]
+CORRESPONDE A CAMPAÑA: (//select[@class='input-form ng-pristine ng-valid ng-touched'])[1]
+CAMPAÑA: (//select[@formcontrolname='nombreCampana'])[1]
+CONTINUAR: bdb-at-btn bdb-at-btn--secondary bdb-at-btn--lg
+
+FINALIZADO:
+CONTINUAR: bdb-at-btn bdb-at-btn--primary bdb-at-btn--sm
+
+COTIZADOR 3 DE 4
+COTIZACION1: radiobtn
+GUARDAR Y CONTINUAR: bdb-at-btn bdb-at-btn--primary bdb-at-btn--lg buttons-space
+
+SOLICITAR APROBACION
+MENSAJE: (//textarea[@id='txt_comentarios'])[1]
+GUARDAR Y CONTINUAR: (//button[@class='bdb-at-btn bdb-at-btn--primary bdb-at-btn--sm'])[3]
+
+DCCFOR130 PASO 1:
+CALIFICACION CIFIN: (//select[@id='calificacion'])[1]
+SEMAFORO: (//select[@id='semaforo'])[1]
+TIPO DE OPERACION: (//select[@id='tipoOperacion'])[1]
+DESEMOLSO: (//select[@id='desembolso'])[1]
+TASA ANTERIOR: (//select[@id='tasaAnterior'])[1]
+SPREAD ANTERIOR : (//input[@id='spreadAnterior'])[1]
+NUMERO DE CREDITO ANTERIOR: (//input[@id='numCreditoAnterior'])[1]
+CLASE DE GARANTIA: (//textarea[@id='garantia'])[1]
+OBSERVACIONES: (//textarea[@id='txt_comentarios'])[1]
+SIGUIENTE: (//button[@class='bdb-at-btn bdb-at-btn--secondary bdb-at-btn--lg'])[1]
+
+DCCFOR130 PASO 2:
+MONTO: (//select[@id='monto'])[1]
+NIVEL ATRIBUCION: (//select[@id='nivelAtribucionMonto'])[1]
+EXCEPCION: (//select[@id='excepcion'])[1]
+LEA: (//input[@id='lea'])[1]
+TOTAL UTILIZADO: (//input[@id='totalUtilizado'])[1]
+MONTO APROBADO FAMILIA: (//input[@id='montoAprobadoFamilia'])[1]
+REALIZO VISITA COMERCIAL ULTIMO TRIMESTRE: (//select[@id='cifrasClienteAnalizadas'])[1]
+SE REVISO CIFIN: (//select[@id='cifin'])[1]
+FECHA DE CORTE DE CIFRAS: (//input[@id='datepicker'])[1]
+RECOMENDACION COMERCIAL: (//textarea[@id='recomendacionComercial'])[1]
+BOTON SIGUIENTE: (//button[@class='bdb-at-btn bdb-at-btn--secondary bdb-at-btn--lg'])[1]
+
+SOLICITUD DE COTIZACION CONTINUAR: 
+BOTON CONTINUAR : (//button[@class='bdb-at-btn bdb-at-btn--primary'][normalize-space()='Continuar'])[1]
+
