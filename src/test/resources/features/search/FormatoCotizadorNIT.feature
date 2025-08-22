@@ -58,7 +58,7 @@ Feature: Diligenciar Formato Cotizador con Nit
     * Cliente Especial o Codeudor : seleccionar Union Temporal
     * Tipo de Identificacion Unionista: NIT
     Given  Que estoy en la pagina 1 de 4 del cotizador
-    When Diligencio el campo Tipo de identificacion del cliente: Cedula.
+    When Diligencio el campo Tipo de identificacion del cliente: Cedula
     And Cliente Especial o Codeudor : seleccionar Union Temporal
     And Tipo de Identificacion del Unionista: Cedula o NIT
     And Rating Financiero Cliente: Seleccionar 4 numeros aleatorios
@@ -71,7 +71,7 @@ Feature: Diligenciar Formato Cotizador con Nit
     * Cliente Especial o Codeudor : seleccionar Pagador
     * Tipo de Identificacion Pagador: Cedula
     Given  Que estoy en la pagina 1 de 4 del cotizador
-    When Diligencio el campo Tipo de identificacion del cliente: Cedula.
+    When Diligencio el campo Tipo de identificacion del cliente: Cedula
     And Cliente Especial o Codeudor : seleccionar Pagador
     And Tipo de Identificacion del Pagador: Cedula o NIT
     And Rating Financiero Cliente: Seleccionar 4 numeros aleatorios
@@ -84,7 +84,7 @@ Feature: Diligenciar Formato Cotizador con Nit
     * Cliente Especial o Codeudor : seleccionar Codeudor
     * Tipo de Identificacion Codeudor: NIT
     Given  Que estoy en la pagina 1 de 4 del cotizador
-    When Diligencio el campo Tipo de identificacion del cliente: Cedula.
+    When Diligencio el campo Tipo de identificacion del cliente: Cedula
     And Cliente Especial o Codeudor : seleccionar Codeudor
     And Tipo de Identificacion del Codeudor: Cedula o NIT
     And Rating Financiero Cliente: Seleccionar 4 numeros aleatorios
