@@ -9,6 +9,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import testing.questions.ErrorLogin;
 import testing.questions.SuccessForm;
 import testing.tasks.Cotizador;
+import testing.tasks.FormularioUno;
 import testing.tasks.Login;
 import testing.tasks.Pricing;
 import testing.ui.PricingPage;
@@ -47,6 +48,19 @@ public class LoginPageDefinitions {
                 Cotizador.click()
         );
     }
+
+    @And("Estoy en la pagina uno de cuatro del cotizador")
+    public void EstoyEnLaPaginaUnoDeCuatroDelCotizador() {
+        theActorInTheSpotlight().should(seeThat(SuccessForm.loginExitoso()));
+    }
+
+    @And("Selecciono la opcion tipo de identificacion")
+    public void SeleccionoLaOpcionTipoDeIdentificacion() {
+          theActorInTheSpotlight().attemptsTo(
+                  FormularioUno.click()
+        );
+    }
+
 
     @Then("Debe entrar a la pagina del formulario")
     public void DebeEntrarALaPaginaDelFormulario() {

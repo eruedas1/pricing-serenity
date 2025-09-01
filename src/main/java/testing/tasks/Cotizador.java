@@ -10,7 +10,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
-import static testing.ui.PricingPage.COTIZADOR;
+import static testing.ui.CotizadorPage.COTIZADOR;
 
 public class Cotizador implements Task {
 
@@ -47,7 +47,7 @@ public class Cotizador implements Task {
 
             if (!encontrado) {
                 System.out.println("❌ No se encontró el botón con texto 'Cotizador'.");
-                return;
+
             }
 
         } catch (Exception e) {

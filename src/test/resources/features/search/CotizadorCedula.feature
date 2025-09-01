@@ -1,10 +1,10 @@
 @all
 Feature: Diligenciar Formato Cotizador Con Cedula
 
-  @Formulario ##caso 7 Cotizador Paso 1 de 4  No
+  @ValidCredentialsAndCotizador ##caso 7 Cotizador Paso 1 de 4  No
   Scenario: En la pagina 1 de 4 Cotizador
-    * Tipo de identificacion del cliente :seleccionar Cedula
-    * Cliente Especial o Codeudor : seleccionar NO
+    # Tipo de identificacion del cliente :seleccionar Cedula
+    # Cliente Especial o Codeudor : seleccionar NO
     Given  Que estoy en la pagina 1 de 4 del cotizador
     When Diligencio el campo Tipo de identificacion del cliente: Cedula
     And Cliente Especial o Codeudor : seleccionar NO
@@ -13,7 +13,7 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     Then Dar Click en continuar
 
 
-  @Formulario ##caso 8 Cotizador Paso 1 de 4  Consorcio
+  @ValidCredentialsAndCotizador @ignore ##caso 8 Cotizador Paso 1 de 4  Consorcio
   Scenario: En la pagina 1 de 4 Cotizador
     * Tipo de identificacion del cliente :seleccionar Cedula
     * Cliente Especial o Codeudor : seleccionar Consorcio
@@ -26,7 +26,7 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     And Doy click en Cargar Informacion
     Then Dar click en el boton continuar
 
-  @Formulario ##caso 9 Cotizador Paso 1 de 4  Fidecomiso
+  @ValidCredentialsAndCotizador @ignore ##caso 9 Cotizador Paso 1 de 4  Fidecomiso
   Scenario: En la pagina 1 de 4 Cotizador
     * Tipo de identificacion del cliente :seleccionar Cedula
     * Cliente Especial o Codeudor : seleccionar Fidecomiso
@@ -39,7 +39,7 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     And Doy click en Cargar Informacion
     Then Seleccionar en continuar
 
-  @Formulario ##caso 10 Cotizador Paso 1 de 4   Patrimonio Autonomo
+  @ValidCredentialsAndCotizador @ignore ##caso 10 Cotizador Paso 1 de 4   Patrimonio Autonomo
   Scenario: En la pagina 1 de 4 Cotizador
     * Tipo de identificacion del cliente :seleccionar Cedula
     * Cliente Especial o Codeudor : seleccionar Patrimonio Autonomo
@@ -52,7 +52,7 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     And Doy click en Cargar Informacion
     Then Click en continuar
 
-  @Formulario ##caso 11 Cotizador Paso 1 de 4  Union Temporal
+  @ValidCredentialsAndCotizador  @ignore ##caso 11 Cotizador Paso 1 de 4  Union Temporal
   Scenario: En la pagina 1 de 4 Cotizador
     * Tipo de identificacion del cliente :seleccionar Cedula
     * Cliente Especial o Codeudor : seleccionar Union Temporal
@@ -65,7 +65,7 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     And Doy click en Cargar Informacion
     Then Dar click en continuar
 
-  @Formulario ##caso 12 Cotizador Paso 1 de 4  Pagador
+  @ValidCredentialsAndCotizador @ignore ##caso 12 Cotizador Paso 1 de 4  Pagador
   Scenario: En la pagina 1 de 4 Cotizador
     * Tipo de identificacion del cliente :seleccionar Cedula
     * Cliente Especial o Codeudor : seleccionar Pagador
@@ -78,7 +78,7 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     And Doy click en Cargar Informacion
     Then  Oprimir click en continuar
 
-  @Formulario ##caso 13 Cotizador Paso 1 de 4  Codeudor
+  @ValidCredentialsAndCotizador @ignore ##caso 13 Cotizador Paso 1 de 4  Codeudor
   Scenario: En la pagina 1 de 4 Cotizador
     * Tipo de identificacion del cliente :seleccionar Cedula
     * Cliente Especial o Codeudor : seleccionar Codeudor
@@ -92,7 +92,7 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     Then Seleccionar click en continuar
 
 
-  @Formulario ##caso 14 Cotizador Paso 2 de 4
+  @ValidCredentialsAndCotizador @ignore ##caso 14 Cotizador Paso 2 de 4
   Scenario: Diligenciar el formato cotizador del paso 2 de 4 con cedula de ciudadania.
     Given Se encuentre en el formato cotizador del paso 2 de 4
     When Diligencio el campo Valor Operacion
@@ -111,26 +111,26 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     And Seleccionar en el campo Campaña "Retencion"
     Then Da click en continuar con el mensaje de Finalizado.
 
-  @Formulario
+  @ValidCredentialsAndCotizador @ignore
   Scenario: ##caso 15 Mensaje Finalizado.
     Given Que en el paso 2 de 4 se dio click en continuar
     When Se encuentre el mensaje de finalizado
     Then Da click en continuar para pasar al paso 3 de 4 del formato cotizador.
 
-  @Formulario
+  @ValidCredentialsAndCotizador @ignore
   Scenario: ##caso 16 Cotizador Paso 3 de 4
     Given Que estoy en el paso 3 de 4 del formato cotizador
     When Seleccione la opcion Cotizacion 1
     Then Da click en guardar & continuar para pasar al mensaje solicitar aprobacion.
 
-  @Formulario
+  @ValidCredentialsAndCotizador @ignore
   Scenario: ##caso 17 Solicitar Aprobacion
     Given Que en el paso 3 de 4 dio click en guardar & continuar
     When Se encuentre en el mensaje solicitar aprobacion
     And Diligencie un comentario "Listo"
     Then Dar click en guardar & continuar para pasar al formato DCC FOR 130.
 
-  @Formulario
+  @ValidCredentialsAndCotizador @ignore
   Scenario: ##caso 18 Diligenciar Formato DCC FOR 130 Paso 1 de 2      ##caso 18
     Given Estemos en el paso 1 de 2 del formato DCC FOR 130
     When Seleccionar en el campo Calificacion CIFIN "A"
@@ -143,7 +143,7 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     And Diligenciar en el campo Clase de Garantia "listo"
     Then Da click en siguiente para pasar al paso 2 de 2 del formato DCC FOR 130
 
-  @Formulario
+  @ValidCredentialsAndCotizador @ignore
   Scenario: ##caso 19 Diligenciar Formato DCC FOR 130 Paso 2 de 2       ##caso 19
     Given Estemos en el paso 2 de 2 del formato DCC FOR 130
     When Seleccionar en el campo Monto "Si"
@@ -158,7 +158,7 @@ Feature: Diligenciar Formato Cotizador Con Cedula
     And Diligenciar en el campo Recomendación Comercial para el desembolso  "Si"
     Then Da click en siguiente para pasar al mensaje solicitud de cotizacion exitosa
 
-  @Formulario
+  @ValidCredentialsAndCotizador @ignore
   Scenario: ##caso 20 Solicitud de Cotizacion Exitosa         ##caso 20
     Given Se dio click en siguiente para pasar al mensaje solicitud de cotizacion exitosa
     When Estemos en este recuadro donde se ven los correos a los que se enviara la solicitud

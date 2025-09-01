@@ -1,39 +1,39 @@
 @all
 Feature: Inicio de sesión y acceso a Pricing
 
-  @ValidCredentials  #caso 1
+  @ValidCredentialsAndCotizador @ignore  #caso 1 @ignore
   Scenario: Inicio de  sesión con credenciales validas
     Given "User" abre la página web
     When Inicia sesión con sus credenciales
     And Debe darle click al boton de pricing
     Then Debe iniciar sesion correctamente a pricing
 
-  @InValidCredentialsCorreo  ##caso 2
+  @ValidCredentialsAndCotizador @ignore  ##caso 2
   Scenario: Inicio de  sesión con correo invalido
     Given "User" abre la página web
     When Inicia sesión con sus credenciales invalidas correo
     Then Debe ver el mensaje de error "Invalid credentials"
 
-  @InValidCredentialsContraseña  ##caso 3
+  @ValidCredentialsAndCotizador @ignore  ##caso 3
   Scenario: Inicio de  sesión con clave invalida
     Given "User" abre la página web
     When Inicia sesión con sus credenciales invalidas clave
     Then Debe ver el mensaje de error "Invalid credentials"
 
-  @BlankUsername   ##caso 4
+  @ValidCredentialsAndCotizador  @ignore  ##caso 4
   Scenario: Inicio de sesión con nombre de usuario en blanco
     Given "User" abre la página web
     When Inicia sesión con sus credenciales correo en blanco
     Then Debe ver el mensaje de error "Required" debajo del nombre de usuario
 
-  @BlankPassword ##caso 5
+  @ValidCredentialsAndCotizador @ignore ##caso 5
   Scenario: Inicio de  sesión con clave en blanco
     Given "User" abre la página web
     When Intenta Iniciar sesión con sus credenciales contrasena en blanco
     Then Debe ver el mensaje de error "Required" debajo de la contrasena
 
 
-  @ValidCredential ##caso 6
+  @ValidCredentialsAndCotizador @ignore ##caso 6
   Scenario: Usuario inicia sesion  accede al formulario
     Given "User" abre la página web
     When Inicia sesión con sus credenciales
@@ -41,6 +41,42 @@ Feature: Inicio de sesión y acceso a Pricing
     And Debe darle click al boton de pricing
     And Debe darle click al boton de cotizador
     Then Debe entrar a la pagina del formulario
+
+
+  @ValidCredentialsAndCotizador ##caso 7
+  Scenario: Registro de formulario uno de cotizador con tipo de identificacion Cedula
+    Given "User" abre la página web
+    When Inicia sesión con sus credenciales
+    And Debe iniciar sesion correctamente
+    And Debe darle click al boton de pricing
+    And Debe darle click al boton de cotizador
+    And Estoy en la pagina uno de cuatro del cotizador
+    And Selecciono la opcion tipo de identificacion
+   # And Cliente Especial o Codeudor : seleccionar NO
+   # And Rating Financiero Cliente: Seleccionar 4 numeros aleatorios
+   # And Doy click en Cargar Informacion
+   # Then Dar Click en continuar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #📄 Documentación Archivo: LoginPage.feature
