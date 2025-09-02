@@ -63,9 +63,10 @@ public class LoginPageDefinitions {
         );
     }
     @And("Escribo el numero de identificacion {string}")
-    public void escriboElNumeroDeIdentificacion(String numeroIdentificacion) {
+    public void escriboElNumeroDeIdentificacion(String numero) {
         theActorInTheSpotlight().attemptsTo(
-                Enter.theValue(numeroIdentificacion).into(FormularioPage.NUMERO_IDENTIFICACION_INPUT)
+                FormularioUno.conNumeroIdentificacion(numero)
+
         );
     }
 
@@ -73,6 +74,7 @@ public class LoginPageDefinitions {
     public void SeleccionoSiEsClienteEspecialOCodeudor() {
         theActorInTheSpotlight().attemptsTo(
                 FormularioUno.click()
+
         );
     }
 
