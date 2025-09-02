@@ -16,8 +16,10 @@ public class FormularioUno implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 WaitUntil.the(FormularioPage.FORMULARIO, isVisible()).forNoMoreThan(10).seconds(),
-                SelectFromOptions.byVisibleText("Cédula de Ciudadanía").from(FormularioPage.TIPO_IDENTIFICACION_DROPDOWN),
-                Click.on(FormularioPage.TIPO_IDENTIFICACION_DROPDOWN)//Seleccionar la opcion CC
+                SelectFromOptions.byVisibleText("Nit").from(FormularioPage.TIPO_IDENTIFICACION_DROPDOWN),
+                Click.on(FormularioPage.TIPO_IDENTIFICACION_DROPDOWN),//Seleccionar la opcion tipo de identificacion
+                SelectFromOptions.byVisibleText("No").from(FormularioPage.TIPO_ClIENTE),
+                Click.on(FormularioPage.TIPO_ClIENTE)//Seleccionar la opcion tipo de cliente
 
         );
     }

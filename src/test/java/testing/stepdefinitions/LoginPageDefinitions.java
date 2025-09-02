@@ -4,6 +4,7 @@ package testing.stepdefinitions;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
+import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import testing.questions.ErrorLogin;
@@ -12,6 +13,7 @@ import testing.tasks.Cotizador;
 import testing.tasks.FormularioUno;
 import testing.tasks.Login;
 import testing.tasks.Pricing;
+import testing.ui.FormularioPage;
 import testing.ui.PricingPage;
 import testing.utils.CsvUtils;
 
@@ -60,7 +62,19 @@ public class LoginPageDefinitions {
                   FormularioUno.click()
         );
     }
+    @And("Escribo el numero de identificacion {string}")
+    public void escriboElNumeroDeIdentificacion(String numeroIdentificacion) {
+        theActorInTheSpotlight().attemptsTo(
+                Enter.theValue(numeroIdentificacion).into(FormularioPage.NUMERO_IDENTIFICACION_INPUT)
+        );
+    }
 
+    @And("Selecciono si es Cliente Especial o Codeudor")
+    public void SeleccionoSiEsClienteEspecialOCodeudor() {
+        theActorInTheSpotlight().attemptsTo(
+                FormularioUno.click()
+        );
+    }
 
     @Then("Debe entrar a la pagina del formulario")
     public void DebeEntrarALaPaginaDelFormulario() {

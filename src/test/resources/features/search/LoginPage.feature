@@ -44,7 +44,7 @@ Feature: Inicio de sesión y acceso a Pricing
 
 
   @ValidCredentialsAndCotizador ##caso 7
-  Scenario: Registro de formulario uno de cotizador con tipo de identificacion Cedula
+  Scenario: Registro de formulario uno de cotizador con tipo de identificacion Cedula //nit it 9011654024
     Given "User" abre la página web
     When Inicia sesión con sus credenciales
     And Debe iniciar sesion correctamente
@@ -52,7 +52,8 @@ Feature: Inicio de sesión y acceso a Pricing
     And Debe darle click al boton de cotizador
     And Estoy en la pagina uno de cuatro del cotizador
     And Selecciono la opcion tipo de identificacion
-   # And Cliente Especial o Codeudor : seleccionar NO
+    And Escribo el numero de identificacion "900123456"
+    And Selecciono si es Cliente Especial o Codeudor
    # And Rating Financiero Cliente: Seleccionar 4 numeros aleatorios
    # And Doy click en Cargar Informacion
    # Then Dar Click en continuar
