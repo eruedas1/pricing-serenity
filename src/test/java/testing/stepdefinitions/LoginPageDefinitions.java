@@ -4,16 +4,11 @@ package testing.stepdefinitions;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
-import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import testing.questions.ErrorLogin;
 import testing.questions.SuccessForm;
-import testing.tasks.Cotizador;
-import testing.tasks.FormularioUno;
-import testing.tasks.Login;
-import testing.tasks.Pricing;
-import testing.ui.FormularioPage;
+import testing.tasks.*;
 import testing.ui.PricingPage;
 import testing.utils.CsvUtils;
 
@@ -59,13 +54,13 @@ public class LoginPageDefinitions {
     @And("Selecciono la opcion tipo de identificacion")
     public void SeleccionoLaOpcionTipoDeIdentificacion() {
           theActorInTheSpotlight().attemptsTo(
-                  FormularioUno.click()
+                  FormularioUnoNit.click()
         );
     }
     @And("Escribo el numero de identificacion {string}")
     public void escriboElNumeroDeIdentificacion(String numero) {
         theActorInTheSpotlight().attemptsTo(
-                FormularioUno.conNumeroIdentificacion(numero)
+                FormularioUnoNit.conNumeroIdentificacion(numero)
 
         );
     }
@@ -73,10 +68,27 @@ public class LoginPageDefinitions {
     @And("Selecciono si es Cliente Especial o Codeudor")
     public void SeleccionoSiEsClienteEspecialOCodeudor() {
         theActorInTheSpotlight().attemptsTo(
-                FormularioUno.click()
+                FormularioUnoNit.click()
 
         );
     }
+
+    @And("En Rating Financiero Cliente selecciono los campos indicados")
+    public void EnRatingFinancieroClienteSeleccionoLosCamposIndicados() {
+        theActorInTheSpotlight().attemptsTo(
+                FormularioUnoNit.click()
+
+        );
+    }
+
+    @And("Debe darle click al boton en Cargar Informacion")
+    public void DebeDarleClickAlBotonEnCargarInformacion() {
+        theActorInTheSpotlight().attemptsTo(
+                FormularioUnoNit.click(),
+                CargarInformacion.click()
+        );
+    }
+
 
     @Then("Debe entrar a la pagina del formulario")
     public void DebeEntrarALaPaginaDelFormulario() {
