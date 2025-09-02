@@ -30,7 +30,8 @@ public class FormularioPage {
     public static final Target PROYECTADOTRES_DROPDOWN = Target.the("Dropdown de Proyectado Tres")
             .locatedBy("//select[@formcontrolname='ratingClientePro2']");//localizar elemento Proyectado Tres
 
-    public static final By BOTON_CARGAR_INFORMACION = cssSelector("button#boton.bdb-at-btn.bdb-at-btn--secondary.bdb-at-btn--lg");
+
+
 
 
     private FormularioPage() {

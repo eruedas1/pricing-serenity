@@ -1,63 +1,29 @@
 @all
 Feature: Inicio de sesión y acceso a Pricing
 
-  @ValidCredentialsAndCotizador @ignore  #caso 1 @ignore
-  Scenario: Inicio de  sesión con credenciales validas
-    Given "User" abre la página web
-    When Inicia sesión con sus credenciales
-    And Debe darle click al boton de pricing
-    Then Debe iniciar sesion correctamente a pricing
-
-  @ValidCredentialsAndCotizador @ignore  ##caso 2
-  Scenario: Inicio de  sesión con correo invalido
-    Given "User" abre la página web
-    When Inicia sesión con sus credenciales invalidas correo
-    Then Debe ver el mensaje de error "Invalid credentials"
-
-  @ValidCredentialsAndCotizador @ignore  ##caso 3
-  Scenario: Inicio de  sesión con clave invalida
-    Given "User" abre la página web
-    When Inicia sesión con sus credenciales invalidas clave
-    Then Debe ver el mensaje de error "Invalid credentials"
-
-  @ValidCredentialsAndCotizador  @ignore  ##caso 4
-  Scenario: Inicio de sesión con nombre de usuario en blanco
-    Given "User" abre la página web
-    When Inicia sesión con sus credenciales correo en blanco
-    Then Debe ver el mensaje de error "Required" debajo del nombre de usuario
-
-  @ValidCredentialsAndCotizador @ignore ##caso 5
-  Scenario: Inicio de  sesión con clave en blanco
-    Given "User" abre la página web
-    When Intenta Iniciar sesión con sus credenciales contrasena en blanco
-    Then Debe ver el mensaje de error "Required" debajo de la contrasena
-
-
-  @ValidCredentialsAndCotizador @ignore ##caso 6
-  Scenario: Usuario inicia sesion  accede al formulario
+  Background:
     Given "User" abre la página web
     When Inicia sesión con sus credenciales
     And Debe iniciar sesion correctamente
     And Debe darle click al boton de pricing
     And Debe darle click al boton de cotizador
-    Then Debe entrar a la pagina del formulario
-
-
+    Then Estoy en la pagina uno de cuatro del cotizador
 
   @ValidCredentialsAndCotizador ##caso 7
   Scenario: Registro de formulario uno de cotizador con tipo de identificacion nit
-    Given "User" abre la página web
-    When Inicia sesión con sus credenciales
-    And Debe iniciar sesion correctamente
-    And Debe darle click al boton de pricing
-    And Debe darle click al boton de cotizador
-    And Estoy en la pagina uno de cuatro del cotizador
-    And Selecciono la opcion tipo de identificacion
-    And Escribo el numero de identificacion "9011654024"
+    Given Selecciono la opcion tipo de identificacion
+    When Escribo el numero de identificacion "9011654024"
     And Selecciono si es Cliente Especial o Codeudor
     And En Rating Financiero Cliente selecciono los campos indicados
-    And Debe darle click al boton en Cargar Informacion
-   # Then Dar Click en continuar
+    And Debe darle click al boton en  Cargar información
+    #Then Dar Click en continuar
+
+
+
+
+
+
+
 
 
 

@@ -1,6 +1,7 @@
 package testing.stepdefinitions;
 
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
@@ -46,18 +47,18 @@ public class LoginPageDefinitions {
         );
     }
 
-    @And("Estoy en la pagina uno de cuatro del cotizador")
+    @Then("Estoy en la pagina uno de cuatro del cotizador")
     public void EstoyEnLaPaginaUnoDeCuatroDelCotizador() {
         theActorInTheSpotlight().should(seeThat(SuccessForm.loginExitoso()));
     }
 
-    @And("Selecciono la opcion tipo de identificacion")
+    @Given("Selecciono la opcion tipo de identificacion")
     public void SeleccionoLaOpcionTipoDeIdentificacion() {
           theActorInTheSpotlight().attemptsTo(
                   FormularioUnoNit.click()
         );
     }
-    @And("Escribo el numero de identificacion {string}")
+    @When("Escribo el numero de identificacion {string}")
     public void escriboElNumeroDeIdentificacion(String numero) {
         theActorInTheSpotlight().attemptsTo(
                 FormularioUnoNit.conNumeroIdentificacion(numero)
@@ -80,8 +81,7 @@ public class LoginPageDefinitions {
 
         );
     }
-
-    @And("Debe darle click al boton en Cargar Informacion")
+    @And("Debe darle click al boton en  Cargar información")
     public void DebeDarleClickAlBotonEnCargarInformacion() {
         theActorInTheSpotlight().attemptsTo(
                 FormularioUnoNit.click(),
