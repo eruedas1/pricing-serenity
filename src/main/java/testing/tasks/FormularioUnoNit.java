@@ -25,22 +25,19 @@ public class FormularioUnoNit implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        // Paso 1: Esperar que el formulario esté visible
+        // Paso 1: y todos los demás en un solo attemptsTo
         actor.attemptsTo(
-                WaitUntil.the(FormularioPage.FORMULARIO, isVisible()).forNoMoreThan(10).seconds()
-        );
+                // Paso 1: Esperar que el formulario esté visible
+                WaitUntil.the(FormularioPage.FORMULARIO, isVisible()).forNoMoreThan(10).seconds(),
 
-        // Paso 2: Esperar y seleccionar tipo de identificación
-        actor.attemptsTo(
+                // Paso 2: Esperar y seleccionar tipo de identificación
                 WaitUntil.the(FormularioPage.TIPO_IDENTIFICACION_DROPDOWN, isVisible()).forNoMoreThan(30).seconds(),
                 WaitUntil.the(FormularioPage.TIPO_IDENTIFICACION_DROPDOWN, isEnabled()).forNoMoreThan(50).seconds(),
                 SelectFromOptions.byVisibleText("Nit").from(FormularioPage.TIPO_IDENTIFICACION_DROPDOWN)
         );
 
-        // Paso 3: Escribir lentamente el número de identificación
+        // Paso 3: Escribir lentamente el número de identificación (no entra en attemptsTo porque es manual)
         WebElementFacade input = FormularioPage.NUMERO_IDENTIFICACION_INPUT.resolveFor(actor);
-
-
         try {
             for (char c : numeroIdentificacion.toCharArray()) {
                 input.sendKeys(String.valueOf(c));
@@ -59,22 +56,26 @@ public class FormularioUnoNit implements Task {
         );
 
         actor.attemptsTo(
+                WaitUntil.the(FormularioPage.TIPO_ClIENTE, isVisible()).forNoMoreThan(30).seconds(),
+                WaitUntil.the(FormularioPage.TIPO_ClIENTE, isEnabled()).forNoMoreThan(50).seconds(),
+                SelectFromOptions.byVisibleText("No").from(FormularioPage.TIPO_ClIENTE),
+
                 WaitUntil.the(FormularioPage.OBSERVADO_DROPDOWN, isVisible()).forNoMoreThan(30).seconds(),
                 WaitUntil.the(FormularioPage.OBSERVADO_DROPDOWN, isEnabled()).forNoMoreThan(50).seconds(),
                 SelectFromOptions.byValue("1").from(FormularioPage.OBSERVADO_DROPDOWN),
+
                 WaitUntil.the(FormularioPage.PROYECTADOUNO_DROPDOWN, isVisible()).forNoMoreThan(30).seconds(),
                 WaitUntil.the(FormularioPage.PROYECTADOUNO_DROPDOWN, isEnabled()).forNoMoreThan(50).seconds(),
                 SelectFromOptions.byValue("2").from(FormularioPage.PROYECTADOUNO_DROPDOWN),
+
                 WaitUntil.the(FormularioPage.PROYECTADODOS_DROPDOWN, isVisible()).forNoMoreThan(30).seconds(),
                 WaitUntil.the(FormularioPage.PROYECTADODOS_DROPDOWN, isEnabled()).forNoMoreThan(50).seconds(),
                 SelectFromOptions.byValue("3").from(FormularioPage.PROYECTADODOS_DROPDOWN),
+
                 WaitUntil.the(FormularioPage.PROYECTADOTRES_DROPDOWN, isVisible()).forNoMoreThan(30).seconds(),
                 WaitUntil.the(FormularioPage.PROYECTADOTRES_DROPDOWN, isEnabled()).forNoMoreThan(50).seconds(),
                 SelectFromOptions.byValue("4").from(FormularioPage.PROYECTADOTRES_DROPDOWN)
-
-
         );
-
     }
 
     // Método estático para crear la tarea con parámetro

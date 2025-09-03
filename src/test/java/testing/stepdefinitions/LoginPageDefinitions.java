@@ -84,8 +84,8 @@ public class LoginPageDefinitions {
     @And("Debe darle click al boton en  Cargar información")
     public void DebeDarleClickAlBotonEnCargarInformacion() {
         theActorInTheSpotlight().attemptsTo(
-                FormularioUnoNit.click(),
-                CargarInformacion.click()
+                FormularioUnoNit.click()
+
         );
     }
 
