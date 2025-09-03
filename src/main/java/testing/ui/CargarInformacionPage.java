@@ -20,9 +20,28 @@ public class CargarInformacionPage {
             ));
 
     public static final Target CAMPO_NOMBRE_CLIENTE = Target.the("campo Nombre Cliente")
-            .located(By.id("nombreCliente"));
+            .located(By.xpath("//span[normalize-space(text())='Nombre Cliente']"));
 
-    
+    public static final Target CAMPO_SEGMENTO_COMERCIAL = Target.the("campo Segmento Comercial")
+            .located(By.xpath("//span[normalize-space(text())='Segmento comercial']"));
+
+    public static final Target CAMPO_EPC = Target.the("campo Clasificación comercial EPC")
+            .located(By.xpath("//span[normalize-space(text())='Clasificación comercial EPC']"));
+
+    public static final Target CAMPO_ACTIVOS_PROMEDIO = Target.the("campo Activos promedio")
+            .located(By.xpath("//span[normalize-space(text())='Activos promedio']"));
+
+    public static final Target CAMPO_PASIVOS_PROMEDIO = Target.the("campo Pasivos promedio")
+            .located(By.xpath("//span[normalize-space(text())='Pasivos promedio']"));
+
+    public static final Target CAMPO_MARGEN_CONTRIBUCION = Target.the("campo Margen de Contribución")
+            .located(By.xpath("//span[normalize-space(text())='Margen de Contribución']"));
+
+    public static final Target CAMPO_ROA = Target.the("campo ROA")
+            .located(By.xpath("//span[normalize-space(text())='ROA']"));
+
+    public static final Target CAMPO_ACTIVOS_TOTALES = Target.the("campo Activos totales")
+            .located(By.xpath("//span[normalize-space(text())='Activos totales']"));
 
     private CargarInformacionPage() {
     }

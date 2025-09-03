@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import testing.questions.BotonCargarInformacion;
 import testing.questions.ErrorLogin;
 import testing.questions.SuccessForm;
 import testing.tasks.*;
@@ -87,6 +88,13 @@ public class LoginPageDefinitions {
                 FormularioUnoNit.click()
 
         );
+    }
+
+    @And("Debe verificar que existen los campos")
+    public void DebeVerificarQueExistenLosCampos() {
+        theActorInTheSpotlight().should(seeThat(BotonCargarInformacion.camposExitosos()));
+
+
     }
 
 
