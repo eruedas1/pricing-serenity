@@ -1,12 +1,10 @@
-package testing.ui;
+package testing.ui.FormularioPasoUno;
 
 import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.webdriver.shadow.ByShadow;
 import org.openqa.selenium.By;
 
-import static org.openqa.selenium.By.cssSelector;
-
-public class CargarInformacionPage {
+public class BotonUnoCargarInformacionPage {
 
     // Busca cualquier botón con ese texto, sin depender de IDs duplicados
     public static final By CAMPO_CON_INFORMACION =
@@ -43,6 +41,6 @@ public class CargarInformacionPage {
     public static final Target CAMPO_ACTIVOS_TOTALES = Target.the("campo Activos totales")
             .located(By.xpath("//span[normalize-space(text())='Activos totales']"));
 
-    private CargarInformacionPage() {
+    private BotonUnoCargarInformacionPage() {
     }
 }

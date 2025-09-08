@@ -4,7 +4,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.targets.Target;
-import testing.ui.LoginPage;
+import testing.ui.Background.LoginPage;
 
 public class ErrorLogin implements Question<Boolean> {
     private final String message;

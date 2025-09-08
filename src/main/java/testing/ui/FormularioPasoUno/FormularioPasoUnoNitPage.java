@@ -1,11 +1,9 @@
-package testing.ui;
+package testing.ui.FormularioPasoUno;
 
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-import static org.openqa.selenium.By.cssSelector;
-
-public class FormularioPage {
+public class FormularioPasoUnoNitPage {
     public static final Target FORMULARIO = Target.the("Formulario de cotizador")
             .locatedBy("div.pr-title p"); // Cambia el locator si es diferente
 
@@ -31,9 +29,13 @@ public class FormularioPage {
             .locatedBy("//select[@formcontrolname='ratingClientePro2']");//localizar elemento Proyectado Tres
 
 
+    //Boton de continuar paso 1 de 4
+    public static final Target BOTONCONTINUAR1 = Target.the("Boton continuar")
+            .located(By.xpath("//button[normalize-space()='Continuar']"));
 
 
 
-    private FormularioPage() {
+
+    private FormularioPasoUnoNitPage() {
     }
 }

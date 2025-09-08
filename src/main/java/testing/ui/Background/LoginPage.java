@@ -1,4 +1,4 @@
-package testing.ui;
+package testing.ui.Background;
 
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;

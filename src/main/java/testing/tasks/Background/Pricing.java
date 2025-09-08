@@ -1,10 +1,10 @@
-package testing.tasks;
+package testing.tasks.Background;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import testing.ui.PricingPage;
+import testing.ui.Background.PricingPage;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 

@@ -1,9 +1,9 @@
-@all
+@ValidCredentialsAndCotizador
 Feature: Inicio de sesión y acceso a Pricing
 
   Background:
     Given "User" abre la página web
-    When Inicia sesión con sus credenciales
+    When Inicia sesion con sus credenciales
     And Debe iniciar sesion correctamente
     And Debe darle click al boton de pricing
     And Debe darle click al boton de cotizador
@@ -17,7 +17,7 @@ Feature: Inicio de sesión y acceso a Pricing
     And En Rating Financiero Cliente selecciono los campos indicados
     And Debe darle click al boton en  Cargar información
     And Debe verificar que existen los campos
-    #Then Dar Click en continuar
+   # Then Dar click en el boton continuar
 
 
 

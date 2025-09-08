@@ -1,16 +1,17 @@
-package testing.tasks;
+package testing.tasks.Background;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
 import java.util.Set;
 
-import static testing.ui.CotizadorPage.COTIZADOR;
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static testing.ui.Background.CotizadorPage.COTIZADOR;
 
 public class Cotizador implements Task {
 
@@ -32,23 +33,15 @@ public class Cotizador implements Task {
                 }
             }
 
-            // Buscar el botón "Cotizador"
-            List<WebElement> botones = driver.findElements(COTIZADOR);
-            boolean encontrado = false;
+            // 👀 Esperar a que el botón esté presente y clickeable
+            WebElement botonCotizador = wait.until(
+                    ExpectedConditions.elementToBeClickable(COTIZADOR)
+            );
 
-            for (WebElement span : botones) {
-                if (span.getText().trim().equalsIgnoreCase("Cotizador")) {
-                    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", span);
-                    span.click();
-                    encontrado = true;
-                    break;
-                }
-            }
-
-            if (!encontrado) {
-                System.out.println("❌ No se encontró el botón con texto 'Cotizador'.");
-
-            }
+            // Hacer scroll y click
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", botonCotizador);
+            botonCotizador.click();
+            System.out.println("✅ Click en el botón 'Cotizador' realizado.");
 
         } catch (Exception e) {
             System.out.println("❌ Error al hacer clic en el botón 'Cotizador': " + e.getMessage());
@@ -56,6 +49,6 @@ public class Cotizador implements Task {
     }
 
     public static Cotizador click() {
-        return new Cotizador();
+        return instrumented(Cotizador.class);
     }
 }
