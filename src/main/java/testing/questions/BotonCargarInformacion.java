@@ -56,7 +56,7 @@ public class BotonCargarInformacion implements Question<Boolean> {
                 Ensure.that(BotonUnoCargarInformacionPage.CAMPO_ACTIVOS_TOTALES).text().contains("Activos totales"),
 
                 // ... todas tus validaciones ...
-                Espera.unosSegundos(30) // espera 30 segundos extra
+                Espera.unosSegundos(10) // espera 30 segundos extra
         );
         return true;
     }

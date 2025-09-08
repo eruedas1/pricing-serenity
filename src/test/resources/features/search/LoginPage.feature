@@ -1,4 +1,4 @@
-@ValidCredentialsAndCotizador
+@all
 Feature: Inicio de sesión y acceso a Pricing
 
   Background:
@@ -17,7 +17,8 @@ Feature: Inicio de sesión y acceso a Pricing
     And En Rating Financiero Cliente selecciono los campos indicados
     And Debe darle click al boton en  Cargar información
     And Debe verificar que existen los campos
-   # Then Dar click en el boton continuar
+    And Dar click en el boton continuar en paso uno
+    #Then Estoy en la pagina dos de cuatro del cotizador
 
 
 

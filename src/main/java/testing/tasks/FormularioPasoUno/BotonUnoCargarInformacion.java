@@ -19,21 +19,18 @@ public class BotonUnoCargarInformacion implements Task {
         actor.attemptsTo(
                 // Esperar que el botón sea clickeable
                 WaitUntil.the(BotonUnoCargarInformacionPage.BOTON_CARGAR_INFORMACION_VISIBLE,
-                        WebElementStateMatchers.isClickable()).forNoMoreThan(30).seconds(),
+                        WebElementStateMatchers.isClickable()).forNoMoreThan(60).seconds(),
 
                 // Hacer click
                 Click.on(BotonUnoCargarInformacionPage.BOTON_CARGAR_INFORMACION_VISIBLE),
 
                 // Esperar hasta que el campo con info esté visible (máx 40s)
-                WaitUntil.the(BotonUnoCargarInformacionPage.CAMPO_CON_INFORMACION,
+                WaitUntil.the(BotonUnoCargarInformacionPage.BOTON_CARGAR_INFORMACION_VISIBLE,
                         WebElementStateMatchers.isVisible()).forNoMoreThan(40).seconds()
         );
-
     }
-
 
     public static BotonUnoCargarInformacion unosSegundos() {
         return new BotonUnoCargarInformacion();
     }
 }
-

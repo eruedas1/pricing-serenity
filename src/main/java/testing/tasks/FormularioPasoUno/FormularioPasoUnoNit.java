@@ -42,12 +42,9 @@ public class FormularioPasoUnoNit implements Task {
                 SelectFromOptions.byValue("1").from(FormularioPasoUnoNitPage.OBSERVADO_DROPDOWN),
                 SelectFromOptions.byValue("2").from(FormularioPasoUnoNitPage.PROYECTADOUNO_DROPDOWN),
                 SelectFromOptions.byValue("3").from(FormularioPasoUnoNitPage.PROYECTADODOS_DROPDOWN),
-                SelectFromOptions.byValue("4").from(FormularioPasoUnoNitPage.PROYECTADOTRES_DROPDOWN),
+                SelectFromOptions.byValue("4").from(FormularioPasoUnoNitPage.PROYECTADOTRES_DROPDOWN)
 
-                // Paso 5: Botón Continuar
-                Scroll.to(FormularioPasoUnoNitPage.BOTONCONTINUAR1),
-                WaitUntil.the(FormularioPasoUnoNitPage.BOTONCONTINUAR1, isClickable()).forNoMoreThan(10).seconds(),
-                Click.on(FormularioPasoUnoNitPage.BOTONCONTINUAR1)
+
         );
     }
 

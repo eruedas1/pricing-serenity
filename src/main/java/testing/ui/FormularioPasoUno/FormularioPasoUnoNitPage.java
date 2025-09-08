@@ -30,9 +30,8 @@ public class FormularioPasoUnoNitPage {
 
 
     //Boton de continuar paso 1 de 4
-    public static final Target BOTONCONTINUAR1 = Target.the("Boton continuar")
+    public static final Target BOTONCONTINUAR = Target.the("Botón continuar paso 1")
             .located(By.xpath("//button[normalize-space()='Continuar']"));
-
 
 
 

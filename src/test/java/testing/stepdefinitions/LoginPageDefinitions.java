@@ -4,6 +4,7 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import testing.questions.BotonCargarInformacion;
 import testing.questions.ErrorLogin;
+import testing.questions.PasoDosEsVisible;
 import testing.questions.SuccessForm;
 import testing.tasks.Background.Cotizador;
 import testing.tasks.Background.Login;
@@ -17,6 +18,8 @@ import java.util.List;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static org.hamcrest.Matchers.is;
 
 
 public class LoginPageDefinitions {
@@ -105,11 +108,10 @@ public class LoginPageDefinitions {
         theActorInTheSpotlight().should(seeThat(BotonCargarInformacion.camposExitosos()));
     }
 
-    @Then("Dar click en el boton continuar")
-    public void darClickEnElBotonContinuar() {
+    @And("Dar click en el boton continuar en paso uno")
+    public void darClickEnContinuarPasoUno() {
         theActorInTheSpotlight().attemptsTo(
-                BotonUnoCargarInformacion.unosSegundos()
-
+                ClickEnContinuar.enPasoUno()
         );
     }
 
