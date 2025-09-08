@@ -18,7 +18,7 @@ Feature: Inicio de sesión y acceso a Pricing
     And Debe darle click al boton en  Cargar información
     And Debe verificar que existen los campos
     And Dar click en el boton continuar en paso uno
-    #Then Estoy en la pagina dos de cuatro del cotizador
+    Then Estoy en la pagina dos de cuatro del cotizador
 
 
 

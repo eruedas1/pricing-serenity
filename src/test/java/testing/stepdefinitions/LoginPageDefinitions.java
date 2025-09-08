@@ -109,7 +109,7 @@ public class LoginPageDefinitions {
     }
 
     @And("Dar click en el boton continuar en paso uno")
-    public void darClickEnContinuarPasoUno() {
+    public void darClickEnContinuarEnPasoUno() {
         theActorInTheSpotlight().attemptsTo(
                 ClickEnContinuar.enPasoUno()
         );

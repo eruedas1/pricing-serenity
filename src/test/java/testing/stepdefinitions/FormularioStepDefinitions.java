@@ -16,7 +16,7 @@ public class FormularioStepDefinitions {
         );
 
         // Ejecutar la acción de click por separado
-        theActorInTheSpotlight().attemptsTo(
-                ClickEnContinuar.enPasoUno()
-        );
+       // theActorInTheSpotlight().attemptsTo(
+          //      ClickEnContinuar.enPasoUno()
+     //   );
     }}

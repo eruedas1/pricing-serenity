@@ -18,11 +18,11 @@ public class ClickEnContinuar implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Scroll.to(FormularioPasoUnoNitPage.BOTONCONTINUAR),
-                WaitUntil.the(FormularioPasoUnoNitPage.BOTONCONTINUAR, isClickable()).forNoMoreThan(10).seconds(),
-                Click.on(FormularioPasoUnoNitPage.BOTONCONTINUAR)
+                Scroll.to(FormularioPasoUnoNitPage.BOTON_CONTINUAR),
+                WaitUntil.the(FormularioPasoUnoNitPage.BOTON_CONTINUAR, isClickable()).forNoMoreThan(30).seconds(),
+                Click.on(FormularioPasoUnoNitPage.BOTON_CONTINUAR)
 
-                // Validar paso 2
+
         );
     }
 
