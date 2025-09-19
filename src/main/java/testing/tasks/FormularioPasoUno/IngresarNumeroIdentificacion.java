@@ -6,6 +6,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import testing.ui.FormularioPasoUno.FormularioPasoUnoNitPage;
 
+
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class IngresarNumeroIdentificacion implements Task {
@@ -16,16 +17,16 @@ public class IngresarNumeroIdentificacion implements Task {
             this.numero = numero;
         }
 
-        @Override
-        public <T extends Actor> void performAs(T actor) {
-            actor.attemptsTo(
-                    WaitUntil.the(FormularioPasoUnoNitPage.NUMERO_IDENTIFICACION_INPUT, isVisible()).forNoMoreThan(10).seconds(),
-                    Enter.theValue(numero).into(FormularioPasoUnoNitPage.NUMERO_IDENTIFICACION_INPUT)
-            );
-        }
-
-        public static IngresarNumeroIdentificacion con(String numero) {
-            return new IngresarNumeroIdentificacion(numero);
-        }
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        actor.attemptsTo(
+                WaitUntil.the(FormularioPasoUnoNitPage.NUMERO_IDENTIFICACION_INPUT, isVisible()).forNoMoreThan(10).seconds(),
+                Enter.theValue(numero).into(FormularioPasoUnoNitPage.NUMERO_IDENTIFICACION_INPUT)
+        );
     }
+
+    public static IngresarNumeroIdentificacion con(String numero) {
+        return new IngresarNumeroIdentificacion(numero);
+    }
+}
 

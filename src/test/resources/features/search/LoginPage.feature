@@ -9,7 +9,7 @@ Feature: Inicio de sesión y acceso a Pricing
     And Debe darle click al boton de cotizador
     Then Estoy en la pagina uno de cuatro del cotizador
 
-  @ValidCredentialsAndCotizador ##caso 7
+  ##caso 7
   Scenario: Registro de formulario uno de cotizador con tipo de identificacion nit
     Given Selecciono la opcion tipo de identificacion
     When Escribo el numero de identificacion "9011654024"
@@ -20,7 +20,22 @@ Feature: Inicio de sesión y acceso a Pricing
     And Dar click en el boton continuar en paso uno
     Then Estoy en la pagina dos de cuatro del cotizador
 
-
+  ##caso 8 Scenario: Registro de formulario uno de cotizador con tipo de identificacion nit
+    Given Escribo el valor operacion "100000000"
+    When Selecciono sustitucion o prorroga
+    And Selecciono el tipo de operacion
+    And Selecciono el indice de referencia
+    And Escribo el spread "3.10"
+    And Escribo el plazo en meses "36"
+    And Escribo el periodo de gracia "2"
+    And Selecciono la periodicidad pago de intereses
+    And Selecciono amortizacion de capital
+    And Selecciono tipo de garantia
+    And Escribo el valor de la garantia "50000000"
+    And Escribo el valor de las comisiones negociadas "10"
+    And Selecciono corresponde a una campana
+    And Doy click en continuar
+    Then Aparece mensaje finalizado
 
 
 

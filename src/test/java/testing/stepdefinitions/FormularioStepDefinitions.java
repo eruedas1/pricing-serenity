@@ -1,7 +1,9 @@
 package testing.stepdefinitions;
-import io.cucumber.java.en.Then;
+import io.cucumber.java.en.*;
 import testing.questions.PasoDosEsVisible;
 import testing.tasks.FormularioPasoUno.ClickEnContinuar;
+import testing.tasks.FormularioPasoUno.IngresarNumeroIdentificacion;
+import testing.tasks.PasoDosCotizador.IngresarValorOperacion;
 
 import static com.google.common.base.Predicates.equalTo;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -16,7 +18,9 @@ public class FormularioStepDefinitions {
         );
 
         // Ejecutar la acción de click por separado
-       // theActorInTheSpotlight().attemptsTo(
-          //      ClickEnContinuar.enPasoUno()
-     //   );
-    }}
+        // theActorInTheSpotlight().attemptsTo(
+        //      ClickEnContinuar.enPasoUno()
+        //   );
+    }
+
+}
