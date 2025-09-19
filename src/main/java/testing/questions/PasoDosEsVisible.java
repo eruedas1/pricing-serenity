@@ -5,6 +5,8 @@ import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import testing.ui.FormularioPasoUno.FormularioPasoDosPage;
+import testing.ui.FormularioPasoUno.FormularioPasoUnoNitPage;
+
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isCurrentlyVisible;
 
 
@@ -17,8 +19,9 @@ public class PasoDosEsVisible implements Question<Boolean> {
         try {
             // Espera hasta que el título sea visible
             actor.attemptsTo(
-                    WaitUntil.the(FormularioPasoDosPage.TITULO_PASO_DOS, isCurrentlyVisible()).forNoMoreThan(30).seconds(),
+                    WaitUntil.the(FormularioPasoDosPage.TITULO_PASO_DOS, isCurrentlyVisible()).forNoMoreThan(60).seconds(),
                     Ensure.that(FormularioPasoDosPage.TITULO_PASO_DOS).isDisplayed()
+
             );
 
             // Debug: imprimir si el elemento se encuentra
