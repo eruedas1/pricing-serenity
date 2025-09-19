@@ -3,7 +3,7 @@ package testing.ui.FormularioPasoUno;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-public class FormularioPasoUnoNitPage {
+public class FormularioPasoUnoPage {
     public static final Target FORMULARIO = Target.the("Formulario de cotizador")
             .locatedBy("div.pr-title p"); // Cambia el locator si es diferente
 
@@ -35,6 +35,6 @@ public class FormularioPasoUnoNitPage {
 
 
 
-    private FormularioPasoUnoNitPage() {
+    private FormularioPasoUnoPage() {
     }
 }

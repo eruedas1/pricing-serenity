@@ -11,6 +11,7 @@ import testing.tasks.Background.Login;
 import testing.tasks.Background.Pricing;
 import testing.tasks.FormularioPasoUno.*;
 import testing.ui.Background.PricingPage;
+import testing.ui.FormularioPasoUno.FormularioPasoUnoPage;
 import testing.utils.CsvUtils;
 import java.io.IOException;
 import java.util.Arrays;
@@ -65,13 +66,13 @@ public class LoginPageDefinitions {
 
     @Then("Estoy en la pagina uno de cuatro del cotizador")
     public void estoyEnLaPaginaUnoDeCuatroDelCotizador() {
-        theActorInTheSpotlight().should(seeThat(SuccessForm.loginExitoso()));
-    }
-
-    @Given("Selecciono la opcion tipo de identificacion")
-    public void seleccionoLaOpcionTipoDeIdentificacion() {
+        theActorInTheSpotlight().should(
+                seeThat(SuccessForm.conTexto(FormularioPasoUnoPage.FORMULARIO, "Cotizador"))
+        );}
+    @Given("Selecciono la opcion tipo de identificacion {string}")
+    public void seleccionoLaOpcionTipoDeIdentificacion(String tipo) {
         theActorInTheSpotlight().attemptsTo(
-                SeleccionarTipoIdentificacion.como("Nit")
+                SeleccionarTipoIdentificacion.como(tipo)
         );
     }
     @When("Escribo el numero de identificacion {string}")
@@ -81,10 +82,10 @@ public class LoginPageDefinitions {
         );
     }
 
-    @And("Selecciono si es Cliente Especial o Codeudor")
-    public void seleccionoSiEsClienteEspecialOCodeudor() {
+    @And("Selecciono si es Cliente Especial o Codeudor {string}")
+    public void seleccionoSiEsClienteEspecialOCodeudor(String rolCliente) {
         theActorInTheSpotlight().attemptsTo(
-                SeleccionarTipoCliente.como("No")
+                SeleccionarTipoCliente.como(rolCliente)
         );
     }
 
@@ -114,13 +115,23 @@ public class LoginPageDefinitions {
                 ClickEnContinuar.enPasoUno()
         );
     }
-
+    @Then("Estoy en la pagina dos de cuatro del cotizador")
+    public void estoyEnLaPaginaDosDeCuatroDelCotizador() {
+        theActorInTheSpotlight().should(
+                seeThat(PasoDosEsVisible.existe())
+                        .orComplainWith(AssertionError.class, "No se encontró el PASO 2 DE 4 en el cotizador")
+        );
+    }
+// outline
+@When("completa el formulario con el NIT {string}")
+public void completa_el_formulario_con_el_nit(String string) {
+}
 
     // Casos de prueba de excepcion
 
     @Then("Debe entrar a la pagina del formulario")
     public void debeEntrarALaPaginaDelFormulario() {
-        theActorInTheSpotlight().should(seeThat(SuccessForm.loginExitoso()));
+        theActorInTheSpotlight().should(seeThat(SuccessForm.con(FormularioPasoUnoPage.FORMULARIO)));
     }
 
     @Then("Debe ver el mensaje de error {string}")
@@ -128,10 +139,6 @@ public class LoginPageDefinitions {
         theActorInTheSpotlight().should(seeThat(ErrorLogin.porCredencialesInvalidas(expectedErrorMessage)));
     }
 
-    @Then("Debe iniciar sesion correctamente a pricing")
-    public void debeIniciarSesionCorrectamenteAPricing() {
-        theActorInTheSpotlight().should(seeThat(SuccessForm.loginExitoso()));
-    }
 
     @Then("Debe ver el mensaje de error {string} debajo del nombre de usuario")
     public void debeVerElMensajeDeErrorDebajoDelNombreDeUsuario(String expectedErrorMessage) {

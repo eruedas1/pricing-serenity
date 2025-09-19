@@ -4,7 +4,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import testing.ui.FormularioPasoUno.FormularioPasoUnoNitPage;
+import testing.ui.FormularioPasoUno.FormularioPasoUnoPage;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
@@ -19,8 +19,8 @@ public class SeleccionarTipoCliente implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(FormularioPasoUnoNitPage.TIPO_ClIENTE, isEnabled()).forNoMoreThan(10).seconds(),
-                SelectFromOptions.byVisibleText(opcion).from(FormularioPasoUnoNitPage.TIPO_ClIENTE)
+                WaitUntil.the(FormularioPasoUnoPage.TIPO_ClIENTE, isEnabled()).forNoMoreThan(10).seconds(),
+                SelectFromOptions.byVisibleText(opcion).from(FormularioPasoUnoPage.TIPO_ClIENTE)
         );
     }
 

@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 public class LoginPage {
 
     private LoginPage() { }
+    public static final Target LOGIN_BIENVENIDA = Target.the("Mensaje de bienvenida en Pricing")
+            .locatedBy("//h1[contains(text(), 'Bienvenido')]");
     public static final Target INICIO_FAAN = Target.the("Boton login")
             .locatedBy("//button[normalize-space()='Inicia sesión']");
     public static final Target INPUT_CORREO = Target.the("Boton login")

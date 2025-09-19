@@ -9,16 +9,21 @@ Feature: Inicio de sesión y acceso a Pricing
     And Debe darle click al boton de cotizador
     Then Estoy en la pagina uno de cuatro del cotizador
 
-  @ValidCredentialsAndCotizador ##caso 7
-  Scenario: Registro de formulario uno de cotizador con tipo de identificacion nit
-    Given Selecciono la opcion tipo de identificacion
-    When Escribo el numero de identificacion "9011654024"
-    And Selecciono si es Cliente Especial o Codeudor
+  @ValidCredentialsAndCotizador  ##caso 7
+  Scenario Outline: Registro de formulario uno de cotizador con tipo de identificacion nit
+    Given Selecciono la opcion tipo de identificacion "<tipo>"
+    When Escribo el numero de identificacion "<numero>"
+    And Selecciono si es Cliente Especial o Codeudor "<rolCliente>"
     And En Rating Financiero Cliente selecciono los campos indicados
     And Debe darle click al boton en  Cargar información
     And Debe verificar que existen los campos
     And Dar click en el boton continuar en paso uno
     Then Estoy en la pagina dos de cuatro del cotizador
+
+    Examples:
+      | tipo | numero     | rolCliente       |
+      | Nit  | 9011654024 | No               |
+      | Nit  | 9011654024 | Consorcio        |
 
 
 

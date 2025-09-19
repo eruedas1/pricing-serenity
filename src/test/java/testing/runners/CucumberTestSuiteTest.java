@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         },
         glue = "testing.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@all" //Tag para correr escenarios especificos de cada feature
+        tags = " " //Tag para correr escenarios especificos de cada feature
 )
 public class CucumberTestSuiteTest {}
 

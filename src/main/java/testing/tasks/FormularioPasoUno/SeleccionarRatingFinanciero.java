@@ -3,17 +3,17 @@ package testing.tasks.FormularioPasoUno;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import testing.ui.FormularioPasoUno.FormularioPasoUnoNitPage;
+import testing.ui.FormularioPasoUno.FormularioPasoUnoPage;
 
 public class SeleccionarRatingFinanciero implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                SelectFromOptions.byValue("1").from(FormularioPasoUnoNitPage.OBSERVADO_DROPDOWN),
-                SelectFromOptions.byValue("2").from(FormularioPasoUnoNitPage.PROYECTADOUNO_DROPDOWN),
-                SelectFromOptions.byValue("3").from(FormularioPasoUnoNitPage.PROYECTADODOS_DROPDOWN),
-                SelectFromOptions.byValue("4").from(FormularioPasoUnoNitPage.PROYECTADOTRES_DROPDOWN)
+                SelectFromOptions.byValue("1").from(FormularioPasoUnoPage.OBSERVADO_DROPDOWN),
+                SelectFromOptions.byValue("2").from(FormularioPasoUnoPage.PROYECTADOUNO_DROPDOWN),
+                SelectFromOptions.byValue("3").from(FormularioPasoUnoPage.PROYECTADODOS_DROPDOWN),
+                SelectFromOptions.byValue("4").from(FormularioPasoUnoPage.PROYECTADOTRES_DROPDOWN)
         );
     }
 
