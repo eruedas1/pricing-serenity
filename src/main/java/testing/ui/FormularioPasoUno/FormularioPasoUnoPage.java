@@ -16,7 +16,13 @@ public class FormularioPasoUnoPage {
     public static final Target TIPO_ClIENTE = Target.the("Dropdown de tipo de cliente")
             .locatedBy("#tipoClienteEspecial"); //localizar elemento tipo de cliente especial o codeudor
 
-    public static final Target OBSERVADO_DROPDOWN = Target.the("Dropdown de Observado")
+    public static final Target SELECT_TIPO_IDENTIFICACION = Target.the("Select Tipo de Identificación")
+            .located(By.id("tipoIdentificacionClienteEspecial"));
+
+    public static final Target INPUT_NUMERO_IDENTIFICACION = Target.the("Input Número de Identificación")
+            .located(By.id("identificacionClienteEspecial"));
+
+        public static final Target OBSERVADO_DROPDOWN = Target.the("Dropdown de Observado")
             .locatedBy("//select[@formcontrolname='ratingClienteObs1' and not(contains(@class,'ng-hide'))]"); //localizar elemento Observado
 
     public static final Target PROYECTADOUNO_DROPDOWN = Target.the("Dropdown de Proyectado Uno")

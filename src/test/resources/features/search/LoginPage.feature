@@ -14,6 +14,7 @@ Feature: Inicio de sesión y acceso a Pricing
     Given Selecciono la opcion tipo de identificacion "<tipo>"
     When Escribo el numero de identificacion "<numero>"
     And Selecciono si es Cliente Especial o Codeudor "<rolCliente>"
+    And Selecciono opciones requeridas "<tipoI>" y "<numeroI>"
     And En Rating Financiero Cliente selecciono los campos indicados
     And Debe darle click al boton en  Cargar información
     And Debe verificar que existen los campos
@@ -21,9 +22,9 @@ Feature: Inicio de sesión y acceso a Pricing
     Then Estoy en la pagina dos de cuatro del cotizador
 
     Examples:
-      | tipo | numero     | rolCliente       |
-      | Nit  | 9011654024 | No               |
-      | Nit  | 9011654024 | Consorcio        |
+      | tipo | numero     | rolCliente | tipoI                | numeroI    |
+      | Nit  | 9011654024 | No         |                      |            |
+      | Nit  | 9011654024 | Consorcio  | Nit                  | 9011654024 |
 
 
 

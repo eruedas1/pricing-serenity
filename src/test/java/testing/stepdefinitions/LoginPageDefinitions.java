@@ -1,5 +1,7 @@
 package testing.stepdefinitions;
 import io.cucumber.java.en.*;
+import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import testing.questions.BotonCargarInformacion;
@@ -127,6 +129,19 @@ public class LoginPageDefinitions {
 public void completa_el_formulario_con_el_nit(String string) {
 }
 
+    @And("Selecciono opciones requeridas {string} y {string}")
+    public void seleccionoOpcionesRequeridas(String tipoI, String numeroI) {
+        if (tipoI != null && !tipoI.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(tipoI).from(FormularioPasoUnoPage.SELECT_TIPO_IDENTIFICACION)
+            );
+        }
+        if (numeroI != null && !numeroI.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    Enter.theValue(numeroI).into(FormularioPasoUnoPage.INPUT_NUMERO_IDENTIFICACION)
+            );
+        }
+    }
     // Casos de prueba de excepcion
 
     @Then("Debe entrar a la pagina del formulario")
