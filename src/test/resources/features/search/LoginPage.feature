@@ -22,9 +22,13 @@ Feature: Inicio de sesión y acceso a Pricing
     Then Estoy en la pagina dos de cuatro del cotizador
 
     Examples:
-      | tipo | numero     | rolCliente | tipoI                | numeroI    |
-      | Nit  | 9011654024 | No         |                      |            |
-      | Nit  | 9011654024 | Consorcio  | Nit                  | 9011654024 |
+      | tipo | numero     | rolCliente          | tipoI                | numeroI    |
+      | Nit  | 9011654024 | No                  |                      |            |
+      | Nit  | 9011654024 | Consorcio           | Nit                  | 9011654024 |
+      | Nit  | 9011654024 | Fideicomiso         | Nit                  | 9011654024 |
+      | Nit  | 9011654024 | Patrimonio Autonomo | Nit                  | 9011654024 |
+      | Nit  | 9011654024 | Union Temporal      | Nit                  | 9011654024 |
+      | Nit  | 9011654024 | Pagador             | Nit                  | 9011654024 |
 
 
 
