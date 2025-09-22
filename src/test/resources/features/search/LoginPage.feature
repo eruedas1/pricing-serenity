@@ -9,27 +9,18 @@ Feature: Inicio de sesión y acceso a Pricing
     And Debe darle click al boton de cotizador
     Then Estoy en la pagina uno de cuatro del cotizador
 
-<<<<<<< HEAD
   @ValidCredentialsAndCotizador  ##caso 7
   Scenario Outline: Registro de formulario uno de cotizador con tipo de identificacion nit
     Given Selecciono la opcion tipo de identificacion "<tipo>"
     When Escribo el numero de identificacion "<numero>"
     And Selecciono si es Cliente Especial o Codeudor "<rolCliente>"
     And Selecciono opciones requeridas "<tipoI>" y "<numeroI>"
-=======
-  ##caso 7
-  Scenario: Registro de formulario uno de cotizador con tipo de identificacion nit
-    Given Selecciono la opcion tipo de identificacion
-    When Escribo el numero de identificacion "9011654024"
-    And Selecciono si es Cliente Especial o Codeudor
->>>>>>> origin/main
     And En Rating Financiero Cliente selecciono los campos indicados
     And Debe darle click al boton en  Cargar información
     And Debe verificar que existen los campos
     And Dar click en el boton continuar en paso uno
     Then Estoy en la pagina dos de cuatro del cotizador
 
-<<<<<<< HEAD
     Examples:
       | tipo | numero     | rolCliente          | tipoI                | numeroI    |
       | Nit  | 9011654024 | No                  |                      |            |
@@ -38,26 +29,27 @@ Feature: Inicio de sesión y acceso a Pricing
       | Nit  | 9011654024 | Patrimonio Autonomo | Nit                  | 9011654024 |
       | Nit  | 9011654024 | Union Temporal      | Nit                  | 9011654024 |
       | Nit  | 9011654024 | Pagador             | Nit                  | 9011654024 |
+      | Nit  | 9011654024 | Pagador             | Nit                  | 9011654024 |
 
 
-=======
-  ##caso 8 Scenario: Registro de formulario uno de cotizador con tipo de identificacion nit
-    Given Escribo el valor operacion "100000000"
-    When Selecciono sustitucion o prorroga
-    And Selecciono el tipo de operacion
-    And Selecciono el indice de referencia
-    And Escribo el spread "3.10"
-    And Escribo el plazo en meses "36"
-    And Escribo el periodo de gracia "2"
-    And Selecciono la periodicidad pago de intereses
-    And Selecciono amortizacion de capital
-    And Selecciono tipo de garantia
-    And Escribo el valor de la garantia "50000000"
-    And Escribo el valor de las comisiones negociadas "10"
-    And Selecciono corresponde a una campana
-    And Doy click en continuar
-    Then Aparece mensaje finalizado
->>>>>>> origin/main
+
+  ##caso 8 Scenario:  Registro de formulario uno de cotizador con tipo de identificacion nit
+   ## Given Escribo el valor operacion "100000000"
+    ##When Selecciono sustitucion o prorroga
+    ##And Selecciono el tipo de operacion
+   ## And Selecciono el indice de referencia
+   ## And Escribo el spread "3.10"
+  ##  And Escribo el plazo en meses "36"
+   ## And Escribo el periodo de gracia "2"
+   ## And Selecciono la periodicidad pago de intereses
+  ## And Selecciono amortizacion de capital
+   ## And Selecciono tipo de garantia
+   ## And Escribo el valor de la garantia "50000000"
+   ## And Escribo el valor de las comisiones negociadas "10"
+   ## And Selecciono corresponde a una campana
+   ## And Doy click en continuar
+   ## Then Aparece mensaje finalizado
+
 
 
 
