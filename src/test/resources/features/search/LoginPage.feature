@@ -9,8 +9,9 @@ Feature: Inicio de sesión y acceso a Pricing
     And Debe darle click al boton de cotizador
     Then Estoy en la pagina uno de cuatro del cotizador
 
-  @ValidCredentialsAndCotizador  ##caso 7
+  @ValidCredentialsAndCotizador
   Scenario Outline: Registro de formulario uno de cotizador con tipo de identificacion nit
+    # Paso 1
     Given Selecciono la opcion tipo de identificacion "<tipo>"
     When Escribo el numero de identificacion "<numero>"
     And Selecciono si es Cliente Especial o Codeudor "<rolCliente>"
@@ -21,37 +22,35 @@ Feature: Inicio de sesión y acceso a Pricing
     And Dar click en el boton continuar en paso uno
     Then Estoy en la pagina dos de cuatro del cotizador
 
+  # Paso 2
+    Given Escribo el valor operacion "<valorOperacion>"
+    When Selecciono sustitucion o prorroga
+    And Selecciono el tipo de operacion
+    And Selecciono el indice de referencia
+    And Escribo el spread "<spread>"
+    And Escribo el plazo en meses "<plazoMeses>"
+    And Escribo el periodo de gracia "<periodoGracia>"
+    And Selecciono la periodicidad pago de intereses
+    And Selecciono amortizacion de capital
+    And Selecciono tipo de garantia
+    And Escribo el valor de la garantia "<valorGarantia>"
+    And Escribo el valor de las comisiones negociadas "<valorComisiones>"
+    And Selecciono corresponde a una campana
+    And Doy click en continuar
+    Then Aparece mensaje finalizado
+
     Examples:
-      | tipo                 | numero     | rolCliente           | tipoI                | numeroI    |
-      | Nit                  | 9011654024 | No                   |                      |            |
-      | Nit                  | 9011654024 | Consorcio            | Nit                  | 9011654024 |
-      | Nit                  | 9011654024 | Fideicomiso          | Nit                  | 9011654024 |
-      | Nit                  | 9011654024 | Patrimonio Autonomo  | Nit                  | 9011654024 |
-      | Nit                  | 9011654024 | Union Temporal       | Nit                  | 9011654024 |
-      | Nit                  | 9011654024 | Pagador              | Nit                  | 9011654024 |
-      | Cédula de Ciudadanía | 9011654024 | Pagador              | Nit                  | 9011654024 |
-
-
-
-  ##caso 8 Scenario:  Registro de formulario uno de cotizador con tipo de identificacion nit
-   ## Given Escribo el valor operacion "100000000"
-    ##When Selecciono sustitucion o prorroga
-    ##And Selecciono el tipo de operacion
-   ## And Selecciono el indice de referencia
-   ## And Escribo el spread "3.10"
-  ##  And Escribo el plazo en meses "36"
-   ## And Escribo el periodo de gracia "2"
-   ## And Selecciono la periodicidad pago de intereses
-  ## And Selecciono amortizacion de capital
-   ## And Selecciono tipo de garantia
-   ## And Escribo el valor de la garantia "50000000"
-   ## And Escribo el valor de las comisiones negociadas "10"
-   ## And Selecciono corresponde a una campana
-   ## And Doy click en continuar
-   ## Then Aparece mensaje finalizado
-
-
-
+      | tipo                 | numero     | rolCliente           | tipoI                | numeroI    | valorOperacion | spread | plazoMeses | periodoGracia | valorGarantia | valorComisiones |
+      | Nit                  | 9011654024 | No                   |                      |            | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
+      | Nit                  | 9011654024 | Consorcio            | Nit                  | 9011654024 | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
+      | Nit                  | 9011654024 | Fideicomiso          | Nit                  | 9011654024 | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
+      | Nit                  | 9011654024 | Patrimonio Autonomo  | Nit                  | 9011654024 | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
+      | Nit                  | 9011654024 | Union Temporal       | Nit                  | 9011654024 | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
+      | Nit                  | 9011654024 | Pagador              | Nit                  | 9011654024 | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
+      | Cédula de Ciudadanía | 9011654024 | No                   |                      |            | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
+      | Cédula de Ciudadanía | 9011654024 | Consorcio            | Nit                  | 9011654024 | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
+      | Cédula de Ciudadanía | 9011654024 | Fideicomiso          | Nit                  | 9011654024 | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
+      | Cédula de Ciudadanía | 9011654024 | Patrimonio Autonomo  | Nit                  | 9011654024 | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
 
 
 
