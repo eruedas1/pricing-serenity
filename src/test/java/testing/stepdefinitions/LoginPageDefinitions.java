@@ -84,19 +84,7 @@ public class LoginPageDefinitions {
         );
     }
 
-    @And("Selecciono si es Cliente Especial o Codeudor {string}")
-    public void seleccionoSiEsClienteEspecialOCodeudor(String rolCliente) {
-        theActorInTheSpotlight().attemptsTo(
-                SeleccionarTipoCliente.como(rolCliente)
-        );
-    }
 
-    @And("En Rating Financiero Cliente selecciono los campos indicados")
-    public void enRatingFinancieroClienteSeleccionoLosCamposIndicados() {
-        theActorInTheSpotlight().attemptsTo(
-                SeleccionarRatingFinanciero.camposIndicados()
-        );
-    }
 
     @And("Debe darle click al boton en  Cargar información")
     public void debeDarleClickAlBotonEnCargarInformacion() {
@@ -129,19 +117,49 @@ public class LoginPageDefinitions {
 public void completa_el_formulario_con_el_nit(String string) {
 }
 
-    @And("Selecciono opciones requeridas {string} y {string}")
-    public void seleccionoOpcionesRequeridas(String tipoI, String numeroI) {
-        if (tipoI != null && !tipoI.trim().isEmpty()) {
-            theActorInTheSpotlight().attemptsTo(
-                    SelectFromOptions.byVisibleText(tipoI).from(FormularioPasoUnoPage.SELECT_TIPO_IDENTIFICACION)
-            );
-        }
-        if (numeroI != null && !numeroI.trim().isEmpty()) {
-            theActorInTheSpotlight().attemptsTo(
-                    Enter.theValue(numeroI).into(FormularioPasoUnoPage.INPUT_NUMERO_IDENTIFICACION)
-            );
-        }
+@And("Selecciono opciones requeridas {string} y {string} y {string} y {string} y {string} y {string} y {string}")
+    public void seleccionoOpcionesRequeridas(String rolCliente, String tipoI, String numeroI, String ratinguno, String ratingdos, String ratingtres, String ratingcuatro) {
+// Rol cliente
+    if (rolCliente != null && !rolCliente.trim().isEmpty()) {
+        theActorInTheSpotlight().attemptsTo(
+                SelectFromOptions.byVisibleText(rolCliente).from(FormularioPasoUnoPage.TIPO_ClIENTE)
+        );
     }
+    // Tipo de identificación
+    if (tipoI != null && !tipoI.trim().isEmpty()) {
+        theActorInTheSpotlight().attemptsTo(
+                SelectFromOptions.byVisibleText(tipoI).from(FormularioPasoUnoPage.SELECT_TIPO_IDENTIFICACION)
+        );
+    }
+    // Número de identificación
+    if (numeroI != null && !numeroI.trim().isEmpty()) {
+        theActorInTheSpotlight().attemptsTo(
+                Enter.theValue(numeroI).into(FormularioPasoUnoPage.INPUT_NUMERO_IDENTIFICACION)
+        );
+    }
+    // Dropdowns de rating
+    if (ratinguno != null && !ratinguno.trim().isEmpty()) {
+        theActorInTheSpotlight().attemptsTo(
+                SelectFromOptions.byValue(ratinguno).from(FormularioPasoUnoPage.OBSERVADO_DROPDOWN)
+        );
+    }
+    if (ratingdos != null && !ratingdos.trim().isEmpty()) {
+        theActorInTheSpotlight().attemptsTo(
+                SelectFromOptions.byValue(ratingdos).from(FormularioPasoUnoPage.PROYECTADOUNO_DROPDOWN)
+        );
+    }
+    if (ratingtres != null && !ratingtres.trim().isEmpty()) {
+        theActorInTheSpotlight().attemptsTo(
+                SelectFromOptions.byValue(ratingtres).from(FormularioPasoUnoPage.PROYECTADODOS_DROPDOWN)
+        );
+    }
+    if (ratingcuatro != null && !ratingcuatro.trim().isEmpty()) {
+        theActorInTheSpotlight().attemptsTo(
+                SelectFromOptions.byValue(ratingcuatro).from(FormularioPasoUnoPage.PROYECTADOTRES_DROPDOWN)
+        );
+    }
+}
+
     // Casos de prueba de excepcion
 
     @Then("Debe entrar a la pagina del formulario")

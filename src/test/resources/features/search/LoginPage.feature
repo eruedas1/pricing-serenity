@@ -14,9 +14,7 @@ Feature: Inicio de sesión y acceso a Pricing
     # Paso 1
     Given Selecciono la opcion tipo de identificacion "<tipo>"
     When Escribo el numero de identificacion "<numero>"
-    And Selecciono si es Cliente Especial o Codeudor "<rolCliente>"
-    And Selecciono opciones requeridas "<tipoI>" y "<numeroI>"
-    And En Rating Financiero Cliente selecciono los campos indicados
+    And Selecciono opciones requeridas "<rolCliente>" y "<tipoI>" y "<numeroI>" y "<ratinguno>" y "<ratingdos>" y "<ratingtres>" y "<ratingcuatro>"
     And Debe darle click al boton en  Cargar información
     And Debe verificar que existen los campos
     And Dar click en el boton continuar en paso uno
@@ -25,8 +23,9 @@ Feature: Inicio de sesión y acceso a Pricing
   # Paso 2
     Given Escribo el valor operacion "<valorOperacion>"
     When Selecciono sustitucion o prorroga
-    And Selecciono el tipo de operacion
-    And Selecciono el indice de referencia
+    And selecciono todos los campos del paso dos
+    And Selecciono el tipo de operacion "<tipo>"
+    And Selecciono el indice de referencia "<tiporefe>"
     And Escribo el spread "<spread>"
     And Escribo el plazo en meses "<plazoMeses>"
     And Escribo el periodo de gracia "<periodoGracia>"
@@ -40,9 +39,8 @@ Feature: Inicio de sesión y acceso a Pricing
     Then Aparece mensaje finalizado
 
     Examples:
-      | tipo                 | numero     | rolCliente           | tipoI                | numeroI    | valorOperacion | spread | plazoMeses | periodoGracia | valorGarantia | valorComisiones |
-      | Nit                  | 9011654024 | No                   |                      |            | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
-
+      | tipo                 | numero     | rolCliente           | tipoI                | numeroI    | ratinguno | ratingdos | ratingtres | ratingcuatro |  valorOperacion | spread | plazoMeses | periodoGracia | valorGarantia | valorComisiones |
+      | Nit                  | 9011654024 | Consorcio            | Nit                  | 9011654024 | 1         | 2         | 3          | 4            |  100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
 
 
 
