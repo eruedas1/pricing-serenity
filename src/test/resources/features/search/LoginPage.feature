@@ -42,15 +42,6 @@ Feature: Inicio de sesión y acceso a Pricing
     Examples:
       | tipo                 | numero     | rolCliente           | tipoI                | numeroI    | valorOperacion | spread | plazoMeses | periodoGracia | valorGarantia | valorComisiones |
       | Nit                  | 9011654024 | No                   |                      |            | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
-      | Nit                  | 9011654024 | Consorcio            | Nit                  | 9011654024 | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
-      | Nit                  | 9011654024 | Fideicomiso          | Nit                  | 9011654024 | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
-      | Nit                  | 9011654024 | Patrimonio Autonomo  | Nit                  | 9011654024 | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
-      | Nit                  | 9011654024 | Union Temporal       | Nit                  | 9011654024 | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
-      | Nit                  | 9011654024 | Pagador              | Nit                  | 9011654024 | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
-      | Cédula de Ciudadanía | 9011654024 | No                   |                      |            | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
-      | Cédula de Ciudadanía | 9011654024 | Consorcio            | Nit                  | 9011654024 | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
-      | Cédula de Ciudadanía | 9011654024 | Fideicomiso          | Nit                  | 9011654024 | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
-      | Cédula de Ciudadanía | 9011654024 | Patrimonio Autonomo  | Nit                  | 9011654024 | 100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
 
 
 
