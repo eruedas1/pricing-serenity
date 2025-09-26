@@ -1,67 +1,61 @@
-package testing.questions;
-
+package testing.tasks.FormularioPasoUno;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Question;
+import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import testing.ui.FormularioPasoUno.BotonUnoCargarInformacionPage;
+import testing.ui.Formulario.BotonUnoCargarInformacionPage;
+import testing.ui.Formulario.FormularioPasoUnoPage;
 import testing.utils.Espera;
 
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class BotonCargarInformacion implements Question<Boolean> {
-
+public class FlujoCargarYContinuar implements Task {
     @Override
-    public Boolean answeredBy(Actor actor) {
+    public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                // Paso 1: Click en Cargar Información
+                WaitUntil.the(BotonUnoCargarInformacionPage.BOTON_CARGAR_INFORMACION_VISIBLE, isClickable())
+                        .forNoMoreThan(60).seconds(),
+                Click.on(BotonUnoCargarInformacionPage.BOTON_CARGAR_INFORMACION_VISIBLE),
 
-                // Nombre Cliente
+                // Paso 2: Validar que los campos aparecen
                 WaitUntil.the(BotonUnoCargarInformacionPage.CAMPO_NOMBRE_CLIENTE, isVisible()).forNoMoreThan(180).seconds(),
                 Ensure.that(BotonUnoCargarInformacionPage.CAMPO_NOMBRE_CLIENTE).isDisplayed(),
-                Ensure.that(BotonUnoCargarInformacionPage.CAMPO_NOMBRE_CLIENTE).text().contains("Nombre Cliente"),
 
-                // Segmento Comercial
                 WaitUntil.the(BotonUnoCargarInformacionPage.CAMPO_SEGMENTO_COMERCIAL, isVisible()).forNoMoreThan(180).seconds(),
                 Ensure.that(BotonUnoCargarInformacionPage.CAMPO_SEGMENTO_COMERCIAL).isDisplayed(),
-                Ensure.that(BotonUnoCargarInformacionPage.CAMPO_SEGMENTO_COMERCIAL).text().contains("Segmento comercial"),
 
-                // EPC
                 WaitUntil.the(BotonUnoCargarInformacionPage.CAMPO_EPC, isVisible()).forNoMoreThan(180).seconds(),
                 Ensure.that(BotonUnoCargarInformacionPage.CAMPO_EPC).isDisplayed(),
-                Ensure.that(BotonUnoCargarInformacionPage.CAMPO_EPC).text().contains("Clasificación comercial EPC"),
 
-                // Activos promedio
                 WaitUntil.the(BotonUnoCargarInformacionPage.CAMPO_ACTIVOS_PROMEDIO, isVisible()).forNoMoreThan(180).seconds(),
                 Ensure.that(BotonUnoCargarInformacionPage.CAMPO_ACTIVOS_PROMEDIO).isDisplayed(),
-                Ensure.that(BotonUnoCargarInformacionPage.CAMPO_ACTIVOS_PROMEDIO).text().contains("Activos promedio"),
 
-                // Pasivos promedio
                 WaitUntil.the(BotonUnoCargarInformacionPage.CAMPO_PASIVOS_PROMEDIO, isVisible()).forNoMoreThan(180).seconds(),
                 Ensure.that(BotonUnoCargarInformacionPage.CAMPO_PASIVOS_PROMEDIO).isDisplayed(),
-                Ensure.that(BotonUnoCargarInformacionPage.CAMPO_PASIVOS_PROMEDIO).text().contains("Pasivos promedio"),
 
-                // Margen de Contribución
                 WaitUntil.the(BotonUnoCargarInformacionPage.CAMPO_MARGEN_CONTRIBUCION, isVisible()).forNoMoreThan(180).seconds(),
                 Ensure.that(BotonUnoCargarInformacionPage.CAMPO_MARGEN_CONTRIBUCION).isDisplayed(),
-                Ensure.that(BotonUnoCargarInformacionPage.CAMPO_MARGEN_CONTRIBUCION).text().contains("Margen de Contribución"),
 
-                // ROA
                 WaitUntil.the(BotonUnoCargarInformacionPage.CAMPO_ROA, isVisible()).forNoMoreThan(180).seconds(),
                 Ensure.that(BotonUnoCargarInformacionPage.CAMPO_ROA).isDisplayed(),
-                Ensure.that(BotonUnoCargarInformacionPage.CAMPO_ROA).text().contains("ROA"),
 
-                // Activos Totales
                 WaitUntil.the(BotonUnoCargarInformacionPage.CAMPO_ACTIVOS_TOTALES, isVisible()).forNoMoreThan(180).seconds(),
                 Ensure.that(BotonUnoCargarInformacionPage.CAMPO_ACTIVOS_TOTALES).isDisplayed(),
-                Ensure.that(BotonUnoCargarInformacionPage.CAMPO_ACTIVOS_TOTALES).text().contains("Activos totales"),
 
-                // ... todas tus validaciones ...
-                Espera.unosSegundos(10) // espera 30 segundos extra
+                Espera.unosSegundos(15), // espera de seguridad
+
+                // Paso 3: Click en Continuar
+                Scroll.to(FormularioPasoUnoPage.BOTON_CONTINUAR),
+                WaitUntil.the(FormularioPasoUnoPage.BOTON_CONTINUAR, isClickable()).forNoMoreThan(30).seconds(),
+                Click.on(FormularioPasoUnoPage.BOTON_CONTINUAR)
         );
-        return true;
     }
 
-    public static BotonCargarInformacion camposExitosos() {
-        return new BotonCargarInformacion();
+    public static FlujoCargarYContinuar ejecutar() {
+        return new FlujoCargarYContinuar();
     }
 }

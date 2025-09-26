@@ -1,9 +1,10 @@
-package testing.ui.FormularioPasoUno;
+package testing.tasks.FormularioPasoUno;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import testing.ui.Formulario.FormularioPasoUnoPage;
 
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;

@@ -7,7 +7,7 @@ import io.cucumber.java.en.*;
 
 import testing.questions.PasoDosEsVisible;
 import testing.questions.SuccessForm;
-import testing.tasks.FormularioPasoUno.ClickEnContinuar;
+
 
 import testing.ui.Background.LoginPage;
 

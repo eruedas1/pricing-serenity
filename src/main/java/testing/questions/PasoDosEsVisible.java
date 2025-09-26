@@ -4,11 +4,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import testing.ui.FormularioPasoUno.FormularioPasoDosPage;
-import testing.ui.FormularioPasoUno.FormularioPasoUnoPage;
-
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isCurrentlyVisible;
-
+import testing.ui.Formulario.FormularioPasoDosPage;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isCurrentlyVisible;
 

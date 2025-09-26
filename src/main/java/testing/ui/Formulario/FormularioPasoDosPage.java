@@ -1,4 +1,4 @@
-package testing.ui.FormularioPasoUno;
+package testing.ui.Formulario;
 
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;

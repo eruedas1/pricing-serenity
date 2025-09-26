@@ -4,7 +4,6 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import testing.questions.BotonCargarInformacion;
 import testing.questions.ErrorLogin;
 import testing.questions.PasoDosEsVisible;
 import testing.questions.SuccessForm;
@@ -13,7 +12,7 @@ import testing.tasks.Background.Login;
 import testing.tasks.Background.Pricing;
 import testing.tasks.FormularioPasoUno.*;
 import testing.ui.Background.PricingPage;
-import testing.ui.FormularioPasoUno.FormularioPasoUnoPage;
+import testing.ui.Formulario.FormularioPasoUnoPage;
 import testing.utils.CsvUtils;
 import java.io.IOException;
 import java.util.Arrays;
@@ -84,27 +83,13 @@ public class LoginPageDefinitions {
         );
     }
 
-
-
-    @And("Debe darle click al boton en  Cargar información")
-    public void debeDarleClickAlBotonEnCargarInformacion() {
+    @And("Debe realizar el flujo de cargar información y continuar")
+    public void debeRealizarFlujoCargarYContinuar() {
         theActorInTheSpotlight().attemptsTo(
-                BotonUnoCargarInformacion.unosSegundos()
-
+                FlujoCargarYContinuar.ejecutar()
         );
     }
 
-        @And("Debe verificar que existen los campos")
-    public void debeVerificarQueExistenLosCampos() {
-        theActorInTheSpotlight().should(seeThat(BotonCargarInformacion.camposExitosos()));
-    }
-
-    @And("Dar click en el boton continuar en paso uno")
-    public void darClickEnContinuarEnPasoUno() {
-        theActorInTheSpotlight().attemptsTo(
-                ClickEnContinuar.enPasoUno()
-        );
-    }
     @Then("Estoy en la pagina dos de cuatro del cotizador")
     public void estoyEnLaPaginaDosDeCuatroDelCotizador() {
         theActorInTheSpotlight().should(

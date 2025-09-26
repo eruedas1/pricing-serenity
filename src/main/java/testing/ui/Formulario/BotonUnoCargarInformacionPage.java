@@ -1,14 +1,9 @@
-package testing.ui.FormularioPasoUno;
+package testing.ui.Formulario;
 import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.webdriver.shadow.ByShadow;
 import org.openqa.selenium.By;
 
 public class BotonUnoCargarInformacionPage {
-
-    // Busca cualquier botón con ese texto, sin depender de IDs duplicados
-    //public static final By CAMPO_CON_INFORMACION =
-      //      By.xpath("//button[contains(normalize-space(text()),'Cargar información')]");
-
     // Si necesitas el último (cuando desaparece loader):
         public static final Target BOTON_CARGAR_INFORMACION_VISIBLE = Target.the("botón cargar")
             .located(ByShadow.cssSelector(

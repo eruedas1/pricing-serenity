@@ -15,9 +15,7 @@ Feature: Inicio de sesión y acceso a Pricing
     Given Selecciono la opcion tipo de identificacion "<tipo>"
     When Escribo el numero de identificacion "<numero>"
     And Selecciono opciones requeridas "<rolCliente>" y "<tipoI>" y "<numeroI>" y "<ratinguno>" y "<ratingdos>" y "<ratingtres>" y "<ratingcuatro>"
-    And Debe darle click al boton en  Cargar información
-    And Debe verificar que existen los campos
-    And Dar click en el boton continuar en paso uno
+    And Debe realizar el flujo de cargar información y continuar
     Then Estoy en la pagina dos de cuatro del cotizador
 
   # Paso 2
