@@ -24,11 +24,12 @@ TIPO DE GARANTIA: (//select[@formcontrolname='tipoGarantia'])[1]
 VLOR DE LA GARANTIA: (//input[@id='valorGarantia'])[1]
 COMISIONES NEGOCIADAS: (//input[@id='porcentajeComisionesNegociadas'])[1]
 CORRESPONDE A CAMPAÑA: (//select[@class='input-form ng-pristine ng-valid ng-touched'])[1]
-CAMPAÑA: (//select[@formcontrolname='nombreCampana'])[1]
+CAMPAÑA: (//select[@formcontrolname='campanaComercial'])[1]
 CONTINUAR: bdb-at-btn bdb-at-btn--secondary bdb-at-btn--lg
 
 FINALIZADO:
 CONTINUAR: bdb-at-btn bdb-at-btn--primary bdb-at-btn--sm
+//*[@id="pr-content"]/div[2]/pr-modelo-rentabilidad-page/bdb-ml-modal[1]/div/div[2]/button
 
 COTIZADOR 3 DE 4
 COTIZACION1: radiobtn

@@ -20,25 +20,17 @@ Feature: Inicio de sesión y acceso a Pricing
 
   # Paso 2
     Given Escribo el valor operacion "<valorOperacion>"
-    When Selecciono sustitucion o prorroga
-    And selecciono todos los campos del paso dos
-    And Selecciono el tipo de operacion "<tipo>"
-    And Selecciono el indice de referencia "<tiporefe>"
-    And Escribo el spread "<spread>"
-    And Escribo el plazo en meses "<plazoMeses>"
-    And Escribo el periodo de gracia "<periodoGracia>"
-    And Selecciono la periodicidad pago de intereses
-    And Selecciono amortizacion de capital
-    And Selecciono tipo de garantia
-    And Escribo el valor de la garantia "<valorGarantia>"
-    And Escribo el valor de las comisiones negociadas "<valorComisiones>"
-    And Selecciono corresponde a una campana
-    And Doy click en continuar
-    Then Aparece mensaje finalizado
+    When Selecciono todos los campos del paso dos "<SustiyProrroga>" y "<tipoOperacion>" y "<indiceReferencia>"
+    And Escribo en los campos requeridos "<spread>" y "<plazoMeses>" y "<periodoGraciaEnMeses>"
+    And Selecciono todos los campos requeridos "<periodicidadPagoDeIntereses>" y "<amortizacionDeCapital>" y "<tipoDeGarantia>"
+    And Escribo en los siguientes campos "<valorGarantia>" y "<comisionesNegociadas>"
+    And Selecciono en el campo "<correspondeCampana>"
+    Then Doy click en continuar
+
 
     Examples:
-      | tipo                 | numero     | rolCliente           | tipoI                | numeroI    | ratinguno | ratingdos | ratingtres | ratingcuatro |  valorOperacion | spread | plazoMeses | periodoGracia | valorGarantia | valorComisiones |
-      | Nit                  | 9011654024 | Consorcio            | Nit                  | 9011654024 | 1         | 2         | 3          | 4            |  100000000      | 3.10   | 36         | 2             | 50000000      | 10              |
+      | tipo | numero     | rolCliente | tipoI | numeroI    | ratinguno | ratingdos | ratingtres | ratingcuatro | valorOperacion | SustiyProrroga | tipoOperacion | indiceReferencia | spread | plazoMeses |periodoGraciaEnMeses |periodicidadPagoDeIntereses |amortizacionDeCapital |tipoDeGarantia |valorGarantia |comisionesNegociadas |correspondeCampana |
+      | Nit  | 9011654024 | Consorcio  | Nit   | 9011654024 | 1         | 2         | 3          | 4            | 100000000      | No             | Constructor   | DTF              | 3      | 36         |1                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 |
 
 
 
