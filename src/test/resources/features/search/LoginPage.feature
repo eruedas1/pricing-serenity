@@ -27,6 +27,11 @@ Feature: Inicio de sesión y acceso a Pricing
     And Selecciono en el campo "<correspondeCampana>"
     Then Doy click en continuar
 
+    #Paso 3
+    Given Selecciono el radiobutton con el texto  Cotizacion
+    When Doy click en el boton Guardar y continuar del paso tres
+    And Escribo un comentario opcional
+    Then Doy nuevamente click al boton Guardar y Continuar
 
     Examples:
       | tipo | numero     | rolCliente | tipoI | numeroI    | ratinguno | ratingdos | ratingtres | ratingcuatro | valorOperacion | SustiyProrroga | tipoOperacion | indiceReferencia | spread | plazoMeses |periodoGraciaEnMeses |periodicidadPagoDeIntereses |amortizacionDeCapital |tipoDeGarantia |valorGarantia |comisionesNegociadas |correspondeCampana |
