@@ -1,9 +1,7 @@
 package testing.stepdefinitions;
 import io.cucumber.java.en.*;
-import testing.tasks.PasoTresCotizador.EscribirComentario;
-import testing.tasks.PasoTresCotizador.GuardarYContinuar;
-import testing.tasks.PasoTresCotizador.RadioButton;
-import testing.tasks.PasoTresCotizador.GuardarYContinuarModal;
+import testing.tasks.PasoTresCotizador.*;
+
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 
@@ -31,7 +29,15 @@ public class PasoTresStepDefinitions {
     @Then("Doy nuevamente click al boton Guardar y Continuar")
     public void doyNuevamenteClickAlBotonGuardarYContinuar() {
         theActorInTheSpotlight().attemptsTo(
-                GuardarYContinuarModal.clickEnBoton()
+                GuardarYContinuarModal.clickEnBoton(),
+                ValidarTituloEnPagina.conTexto("DCC FOR 130")
+        );
+    }
+
+    @Given("Selecciono la opcion de Semaforo")
+    public void seleccionoLaOpcionDeSemaforo() {
+        theActorInTheSpotlight().attemptsTo(
+                SeleccionarSemaforo.conValor("Amarillo") // Puedes cambiar el color aquí
         );
     }
 

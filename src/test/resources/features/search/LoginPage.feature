@@ -33,9 +33,18 @@ Feature: Inicio de sesión y acceso a Pricing
     And Escribo un comentario opcional
     Then Doy nuevamente click al boton Guardar y Continuar
 
+    #Paso DCC FOR 130
+    Given Selecciono la opcion de Semaforo
+    When Selecciono el campo Tipo operacion
+    And Selecciono la opcion Desembolso
+    Then Doy click en el boton Siguiente
+
+
+
+
     Examples:
       | tipo | numero     | rolCliente | tipoI | numeroI    | ratinguno | ratingdos | ratingtres | ratingcuatro | valorOperacion | SustiyProrroga | tipoOperacion | indiceReferencia | spread | plazoMeses |periodoGraciaEnMeses |periodicidadPagoDeIntereses |amortizacionDeCapital |tipoDeGarantia |valorGarantia |comisionesNegociadas |correspondeCampana |
-      | Nit  | 9011654024 | Consorcio  | Nit   | 9011654024 | 1         | 2         | 3          | 4            | 100000000      | No             | Constructor   | DTF              | 3      | 36         |1                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 |
+      | Nit  | 9011654024 | No         |       |            | 1         | 2         | 3          | 4            | 100000000      | No             | Constructor   | IPC              | 3      | 36         |0                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 |
 
 
 
