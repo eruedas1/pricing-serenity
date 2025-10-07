@@ -19,21 +19,28 @@ public class ClickEnSiguienteYValidarTitulo implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
-                // Click en el botón Siguiente
+                // 1️⃣ Click en el botón Siguiente
                 Click.on(BOTON_SIGUIENTE),
 
-                // Espera hasta que el nuevo título aparezca
+                // 2️⃣ Espera hasta que aparezca el título en la siguiente página
                 WaitUntil.the(TITULO_NIVELES_ATRIBUCION, isVisible())
-                        .forNoMoreThan(Duration.ofSeconds(40)),
+                        .forNoMoreThan(40).seconds(),
 
-                // Scroll al título por visibilidad
+                // 3️⃣ Desplazamiento para garantizar visibilidad
                 Scroll.to(TITULO_NIVELES_ATRIBUCION),
 
-                // Validación del texto
+                // 4️⃣ Validación del texto
                 Ensure.that(TITULO_NIVELES_ATRIBUCION)
                         .textContent()
                         .containsIgnoringCase("Niveles de atribución - Visto bueno")
         );
+
+        // 5️⃣ Pausa manual de 30 segundos (mantiene la vista en la página)
+        try {
+            Thread.sleep(15000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 
     public static ClickEnSiguienteYValidarTitulo validar() {
