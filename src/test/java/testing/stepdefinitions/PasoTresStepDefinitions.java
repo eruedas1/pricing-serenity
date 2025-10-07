@@ -26,6 +26,7 @@ public class PasoTresStepDefinitions {
                 EscribirComentario.opcional("Prueba de comentario opcional")
         );
     }
+
     @Then("Doy nuevamente click al boton Guardar y Continuar")
     public void doyNuevamenteClickAlBotonGuardarYContinuar() {
         theActorInTheSpotlight().attemptsTo(
@@ -34,11 +35,31 @@ public class PasoTresStepDefinitions {
         );
     }
 
-    @Given("Selecciono la opcion de Semaforo")
-    public void seleccionoLaOpcionDeSemaforo() {
+    @Given("Selecciono la opcion de Semaforo y CIFIN {string} y {string}")
+    public void seleccionoLaOpcionDeSemaforoYCifin(String semaforo, String cifin) {
         theActorInTheSpotlight().attemptsTo(
-                SeleccionarSemaforo.conValor("Amarillo") // Puedes cambiar el color aquí
+                SeleccionarSemaforoYCifin.conOpciones(semaforo, cifin)
         );
     }
 
+    @When("Selecciono el campo Tipo operacion {string}")
+    public void seleccionoElCampoTipoOperacion(String tipoOperacion) {
+        theActorInTheSpotlight().attemptsTo(
+                SeleccionarTipoOperacion.conValor(tipoOperacion)
+        );
+    }
+
+    @And("Selecciono la opcion Desembolso {string}")
+    public void seleccionoLaOpcionDesembolso(String desembolso) {
+        theActorInTheSpotlight().attemptsTo(
+                SeleccionarDesembolso.conTexto(desembolso)
+        );
+    }
+
+    @Then("Doy click en el boton Siguiente")
+    public void doyClickEnElBotonSiguiente() {
+        theActorInTheSpotlight().attemptsTo(
+                ClickEnSiguienteYValidarTitulo.validar()
+        );
+    }
 }

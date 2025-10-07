@@ -2,11 +2,15 @@ package testing.tasks.PasoTresCotizador;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import testing.ui.Formulario.FormularioPasoTresPage;
+
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
+import java.time.Duration;
+
+import static testing.ui.Formulario.FormularioPasoTresPage.TITULO;
 public class ValidarTituloEnPagina implements Task {
 
     private final String textoEsperado;
@@ -19,22 +23,19 @@ public class ValidarTituloEnPagina implements Task {
         return new ValidarTituloEnPagina(textoEsperado);
     }
 
-
     @Override
     public <T extends Actor> void performAs(T actor) {
 
+        // Espera explícita hasta que el título esté visible (máximo 40 segundos)
         actor.attemptsTo(
-                // Espera hasta que el elemento esté visible
-                WaitUntil.the(FormularioPasoTresPage.TITULO, isVisible())
-                        .forNoMoreThan(30).seconds(),
+                WaitUntil.the(TITULO, isVisible())
+                        .forNoMoreThan(Duration.ofSeconds(40)),
 
-                // Valida el texto
-                Ensure.that(FormularioPasoTresPage.TITULO).textContent()
-                        .containsIgnoringCase(textoEsperado),
+                // Hace scroll por si el elemento está fuera del viewport
+                Scroll.to(TITULO),
 
-                // Espera adicional de 3 segundos antes de continuar
-                WaitUntil.the(FormularioPasoTresPage.TITULO, isVisible())
-                        .forNoMoreThan(30).seconds()
+                // Valida que contenga el texto esperado
+                Ensure.that(TITULO).textContent().containsIgnoringCase(textoEsperado)
         );
     }
 }
