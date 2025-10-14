@@ -37,7 +37,7 @@ public class ClickEnSiguienteYValidarTitulo implements Task {
 
         // 5️⃣ Pausa manual de 30 segundos (mantiene la vista en la página)
         try {
-            Thread.sleep(15000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }

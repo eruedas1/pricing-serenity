@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import testing.questions.PasoDosEsVisible;
 import testing.tasks.FormularioPasoUno.FlujoCargarYContinuar;
+import testing.tasks.PasoCuatroCotizador.BtnContinuarCorreos;
 import testing.tasks.PasoDosCotizador.*;
 import testing.ui.Formulario.FormularioPasoDosPage;
 import testing.ui.Formulario.FormularioPasoUnoPage;

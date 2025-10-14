@@ -39,12 +39,21 @@ Feature: Inicio de sesión y acceso a Pricing
     And Selecciono la opcion Desembolso "<Desembolso>"
     Then Doy click en el boton Siguiente
 
+    #Paso2 DCC FOR 130
+    Given Selecciono la opcion de Monto y Excepcion "<Monto>" y "<Exepcion>"
+    When Escribo en el campo LEA y total utilizado y monto aprobado "<LEA>" y "<TotalUtilizado>" y "<MontoAprobado>"
+    And Selecciono la opcion Desembolso Realizo visita comercial y reviso cifin y fecha de corte "<RealizoVisitaComercial>" y "<RevisoCifin>" y "<FechadeCorte>"
+    And Escribo un comentario en Observaciones y Recomendacion
+    And Doy click en el boton Siguiente para finalizar
+    Then Doy click en continuar correos
+
+
 
 
 
     Examples:
-      | tipo | numero     | rolCliente | tipoI | numeroI    | ratinguno | ratingdos | ratingtres | ratingcuatro | valorOperacion | SustiyProrroga | tipoOperacion | indiceReferencia | spread | plazoMeses |periodoGraciaEnMeses |periodicidadPagoDeIntereses |amortizacionDeCapital |tipoDeGarantia |valorGarantia |comisionesNegociadas |correspondeCampana | Semaforo | CIFIN | TipoOperacion | Desembolso |
-      | Nit  | 9011654024 | No         |       |            | 1         | 2         | 3          | 4            | 100000000      | No             | Constructor   | IPC              | 3      | 36         |0                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 | Amarillo | A     |Bancoldex     | Nuevo      |
+      | tipo | numero     | rolCliente | tipoI | numeroI    | ratinguno | ratingdos | ratingtres | ratingcuatro | valorOperacion | SustiyProrroga | tipoOperacion | indiceReferencia | spread | plazoMeses |periodoGraciaEnMeses |periodicidadPagoDeIntereses |amortizacionDeCapital |tipoDeGarantia |valorGarantia |comisionesNegociadas |correspondeCampana | Semaforo | CIFIN | TipoOperacion | Desembolso |Monto|Exepcion|LEA    |TotalUtilizado|MontoAprobado|RealizoVisitaComercial|RevisoCifin|FechadeCorte|
+      | Nit  | 9011654024 | No         |       |            | 1         | 2         | 3          | 4            | 100000000      | No             | Constructor   | IPC              | 3      | 36         |0                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 | Amarillo | A     |Bancoldex     | Nuevo       |No   | No     |1000000|  1000000     |1000000      |Si                    |Si         |09/10/2025  |
 
 
 
