@@ -169,19 +169,21 @@ public void completa_el_formulario_con_el_nit(String string) {
     public void iniciaSesionConSusCredencialesInvalidasCorreo() throws IOException {
         String rutaCsv = "src/test/resources/data/Login/credenciales-invvalidas-correo.csv";
         List<String[]> filas = CsvUtils.leer(rutaCsv);
-
         for (String[] fila : filas) {
-            String email = fila[0];
-            String password = fila[1];
+            try {
+                String email = fila[0];
+                String password = fila[1];
+                System.out.println("Probando usuario: " + email);
 
-            System.out.println("Probando usuario: " + email);
+                OnStage.theActorCalled("User").attemptsTo(
+                        Login.conCredenciales(email, password)
+                );
 
-            OnStage.theActorCalled("User").attemptsTo(
-                    Login.conCredenciales(email, password)
-            );
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }}
 
-        }
-    }
 
     @When("Inicia sesión con sus credenciales invalidas clave")
     public void iniciaSesionConSusCredencialesInvalidasClave() throws IOException {

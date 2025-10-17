@@ -6,45 +6,44 @@ import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import net.thucydides.core.webdriver.WebDriverFacade;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Hooks {
 
-
     @Before(order = 0)
-    public void setUpStage() {
+    public void setTheStage() {
         OnStage.setTheStage(new OnlineCast());
     }
 
     @Before(order = 1)
-    public void setUpBrowser(Scenario scenario) {
-        WebDriverManager.chromedriver().setup(); // Esto descarga el driver si no está
-        WebDriver driver = new ChromeDriver();
-        OnStage.theActorCalled("Usuario").can(BrowseTheWeb.with(driver));
+    public void restartBrowserBeforeScenario(Scenario scenario) {
+        System.out.println("🔄 Reiniciando navegador para el escenario: " + scenario.getName());
 
-        // Guardamos el nombre del escenario en la sesión de Serenity (opcional)
+        try {
+            // Si hay un driver activo, cerrarlo completamente
+            WebDriver existing = Serenity.getDriver();
+            if (existing != null) {
+                if (existing instanceof WebDriverFacade) {
+                    ((WebDriverFacade) existing).getProxiedDriver().quit();
+                } else {
+                    existing.quit();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("⚠️ Error cerrando el navegador anterior: " + e.getMessage());
+        }
+
+        // Crear uno nuevo
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+
+        // Asociar el nuevo driver al actor principal
+        OnStage.theActorCalled("User").can(BrowseTheWeb.with(driver));
+
+        // Guardar el nombre del escenario
         Serenity.setSessionVariable("ScenarioName").to(scenario.getName());
     }
-//
-//    @Before
-//    public void ConfigurarElEscenarioWeb(Scenario scenario) {
-//        Serenity.setSessionVariable("ScenarioName").to(scenario.getName());
-//    }
-//
-//    @After
-//    public void VerificarCasoDePrueba(Scenario scenario) {
-//        if (getProperty("environment").startsWith("BS")) {
-//            JavascriptExecutor jse = (JavascriptExecutor) getDriver();
-//            if (scenario.isFailed()) {
-//                jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\","
-//                        + " \"arguments\": {\"status\": \"failed\", \"reason\": \"TestFailed\"}}");
-//            } else {
-//                jse.executeScript(
-//                        "browserstack_executor: {\"action\": \"setSessionStatus\","
-//                                + " \"arguments\": {\"status\": \"passed\", \"reason\": \"TestPassed\"}}");
-//            }
-//        }
-//    }
 }

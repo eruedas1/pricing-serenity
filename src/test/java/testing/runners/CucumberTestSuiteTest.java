@@ -9,7 +9,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumber-reports/cucumber.html"},
         features = {
+                "src/test/resources/features/search/Loginsfeatures.feature",
                 "src/test/resources/features/search/LoginPage.feature",
+
         },
         glue = "testing.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE,

@@ -20,7 +20,7 @@ public class BtnSiguiente implements Task {
                 Scroll.to(FormularioPasoCuatroPage.BOTON_SIGUIENTE),
                 WaitUntil.the(FormularioPasoCuatroPage.BOTON_SIGUIENTE, isClickable()).forNoMoreThan(10).seconds(),
                 Click.on(FormularioPasoCuatroPage.BOTON_SIGUIENTE),
-                Espera.unosSegundos(50)
+                Espera.unosSegundos(5)
 
         );
     }

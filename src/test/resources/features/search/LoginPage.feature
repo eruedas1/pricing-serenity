@@ -9,8 +9,9 @@ Feature: Inicio de sesión y acceso a Pricing
     And Debe darle click al boton de cotizador
     Then Estoy en la pagina uno de cuatro del cotizador
 
+
   @ValidCredentialsAndCotizador
-  Scenario Outline: Registro de formulario uno de cotizador con tipo de identificacion nit
+  Scenario Outline: Registro de formulario uno de cotizador con tipo de identificacion
     # Paso 1
     Given Selecciono la opcion tipo de identificacion "<tipo>"
     When Escribo el numero de identificacion "<numero>"
@@ -47,17 +48,17 @@ Feature: Inicio de sesión y acceso a Pricing
     And Doy click en el boton Siguiente para finalizar
     Then Doy click en continuar correos
 
-
-
-
-
     Examples:
-      | tipo | numero     | rolCliente | tipoI | numeroI    | ratinguno | ratingdos | ratingtres | ratingcuatro | valorOperacion | SustiyProrroga | tipoOperacion | indiceReferencia | spread | plazoMeses |periodoGraciaEnMeses |periodicidadPagoDeIntereses |amortizacionDeCapital |tipoDeGarantia |valorGarantia |comisionesNegociadas |correspondeCampana | Semaforo | CIFIN | TipoOperacion | Desembolso |Monto|Exepcion|LEA    |TotalUtilizado|MontoAprobado|RealizoVisitaComercial|RevisoCifin|FechadeCorte|
-      | Nit  | 9011654024 | No         |       |            | 1         | 2         | 3          | 4            | 100000000      | No             | Constructor   | IPC              | 3      | 36         |0                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 | Amarillo | A     |Bancoldex     | Nuevo       |No   | No     |1000000|  1000000     |1000000      |Si                    |Si         |09/10/2025  |
-
-
-
-
+      | tipo                  | numero     | rolCliente                  | tipoI    | numeroI    | ratinguno | ratingdos | ratingtres | ratingcuatro | valorOperacion | SustiyProrroga | tipoOperacion | indiceReferencia | spread | plazoMeses |periodoGraciaEnMeses |periodicidadPagoDeIntereses |amortizacionDeCapital |tipoDeGarantia |valorGarantia |comisionesNegociadas |correspondeCampana | Semaforo | CIFIN | TipoOperacion | Desembolso |Monto|Exepcion|LEA    |TotalUtilizado|MontoAprobado|RealizoVisitaComercial|RevisoCifin|FechadeCorte|
+      | Nit                   | 9011654024 | Consorcio                   | Nit      | 9011654024 | 1         | 2         | 3          | 4            | 100000000      | No             | Constructor   | IPC              | 3      | 36         |0                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 | Amarillo | A     |Bancoldex     | Nuevo       |No   | No     |1000000|  1000000     |1000000      |Si                    |Si         |09/10/2025  |
+      | Nit                   | 9011654024 | Fideicomiso                 | Nit      | 9011654024 | 1         | 2         | 3          | 4            | 100000000      | No             | Constructor   | IPC              | 3      | 36         |0                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 | Amarillo | A     |Bancoldex     | Nuevo       |No   | No     |1000000|  1000000     |1000000      |Si                    |Si         |09/10/2025  |
+      | Nit                   | 9011654024 | Patrimonio Autonomo         | Nit      | 9011654024 | 1         | 2         | 3          | 4            | 100000000      | No             | Constructor   | IPC              | 3      | 36         |0                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 | Amarillo | A     |Bancoldex     | Nuevo       |No   | No     |1000000|  1000000     |1000000      |Si                    |Si         |09/10/2025  |
+      | Nit                   | 9011654024 | Union Temporal              | Nit      | 9011654024 | 1         | 2         | 3          | 4            | 100000000      | No             | Constructor   | IPC              | 3      | 36         |0                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 | Amarillo | A     |Bancoldex     | Nuevo       |No   | No     |1000000|  1000000     |1000000      |Si                    |Si         |09/10/2025  |
+      | Nit                   | 9011654024 | Pagador                     | Nit      | 9011654024 | 1         | 2         | 3          | 4            | 100000000      | No             | Constructor   | IPC              | 3      | 36         |0                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 | Amarillo | A     |Bancoldex     | Nuevo       |No   | No     |1000000|  1000000     |1000000      |Si                    |Si         |09/10/2025  |
+      | Cédula de Ciudadanía  | 91235325   | No                          |          |            | 1         | 2         | 3          | 4            | 100000000      | No             | Constructor   | IPC              | 3      | 36         |0                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 | Amarillo | A     |Bancoldex     | Nuevo       |No   | No     |1000000|  1000000     |1000000      |Si                    |Si         |09/10/2025  |
+      | Cédula de Ciudadanía  | 91235325   | Consorcio                   | Nit      | 9011654024 | 1         | 2         | 3          | 4            | 100000000      | No             | Constructor   | IPC              | 3      | 36         |0                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 | Amarillo | A     |Bancoldex     | Nuevo       |No   | No     |1000000|  1000000     |1000000      |Si                    |Si         |09/10/2025  |
+      | Cédula de Ciudadanía  | 91235325   | Fideicomiso                 | Nit      | 9011654024 | 1         | 2         | 3          | 4            | 100000000      | No             | Constructor   | IPC              | 3      | 36         |0                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 | Amarillo | A     |Bancoldex     | Nuevo       |No   | No     |1000000|  1000000     |1000000      |Si                    |Si         |09/10/2025  |
+      | Cédula de Ciudadanía  | 91235325   | Patrimonio Autonomo         | Nit      | 9011654024 | 1         | 2         | 3          | 4            | 100000000      | No             | Constructor   | IPC              | 3      | 36         |0                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 | Amarillo | A     |Bancoldex     | Nuevo       |No   | No     |1000000|  1000000     |1000000      |Si                    |Si         |09/10/2025  |
 
 
 
