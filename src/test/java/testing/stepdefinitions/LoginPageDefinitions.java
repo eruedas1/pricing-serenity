@@ -194,7 +194,7 @@ public void completa_el_formulario_con_el_nit(String string) {
             try {
                 String email = fila[0];
                 String password = fila[1];
-                System.out.println("Probando usuario: " + email);
+                System.out.println("Probando usuario: " + email + " con contraseña invalida");
 
                 OnStage.theActorCalled("User").attemptsTo(
                         Login.conCredenciales(email, password)
