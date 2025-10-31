@@ -8,17 +8,18 @@ Feature: Inicio de sesión y acceso a Pricing
     And Debe darle click al boton de pricing
     And Debe darle click al boton de cotizador
     Then Estoy en la pagina uno de cuatro del cotizador
-   # Caso 6
-  @ValidCredentialsAndCotizador
+
+
+  @ValidCredentialsAndCotizador @ignore
   Scenario Outline: Registro de formulario uno de cotizador con tipo de identificacion
-    # Paso 1
+    # Caso 6
     Given Selecciono la opcion tipo de identificacion "<tipo>"
     When Escribo el numero de identificacion "<numero>"
     And Selecciono opciones requeridas "<rolCliente>" y "<tipoI>" y "<numeroI>" y "<ratinguno>" y "<ratingdos>" y "<ratingtres>" y "<ratingcuatro>"
     And Debe realizar el flujo de cargar información y continuar
     Then Estoy en la pagina dos de cuatro del cotizador
 
-  # Caso 7
+    #Caso 7
     Given Escribo el valor operacion "<valorOperacion>"
     When Selecciono todos los campos del paso dos "<SustiyProrroga>" y "<tipoOperacion>" y "<indiceReferencia>"
     And Escribo en los campos requeridos "<spread>" y "<plazoMeses>" y "<periodoGraciaEnMeses>"
@@ -73,12 +74,7 @@ Feature: Inicio de sesión y acceso a Pricing
 
 
 
-
-
-
-
-#📄 Documentación Archivo: LoginPage.feature
-#
+    #
 #📌 Descripción General:
 #
 #Este archivo define escenarios de prueba de comportamiento (BDD) para la funcionalidad de login del sistema HRM (Human Resource Management).

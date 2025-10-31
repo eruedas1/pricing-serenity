@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
         features = {
                 "src/test/resources/features/search/Loginsfeatures.feature",
                 "src/test/resources/features/search/LoginPage.feature",
+                "src/test/resources/features/search/Loginsfeatures3.feature",
 
         },
         glue = "testing.stepdefinitions",

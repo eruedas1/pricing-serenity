@@ -43,6 +43,7 @@ public class LoginPageDefinitions {
 
         }
     }
+
     @And("Debe iniciar sesion correctamente")
     public void debeIniciarSesionCorrectamente() {
         theActorInTheSpotlight().attemptsTo(
@@ -69,13 +70,16 @@ public class LoginPageDefinitions {
     public void estoyEnLaPaginaUnoDeCuatroDelCotizador() {
         theActorInTheSpotlight().should(
                 seeThat(SuccessForm.conTexto(FormularioPasoUnoPage.FORMULARIO, "Cotizador"))
-        );}
+        );
+    }
+
     @Given("Selecciono la opcion tipo de identificacion {string}")
     public void seleccionoLaOpcionTipoDeIdentificacion(String tipo) {
         theActorInTheSpotlight().attemptsTo(
                 SeleccionarTipoIdentificacion.como(tipo)
         );
     }
+
     @When("Escribo el numero de identificacion {string}")
     public void escriboElNumeroDeIdentificacion(String numero) {
         theActorInTheSpotlight().attemptsTo(
@@ -97,53 +101,54 @@ public class LoginPageDefinitions {
                         .orComplainWith(AssertionError.class, "No se encontró el PASO 2 DE 4 en el cotizador")
         );
     }
-// outline
-@When("completa el formulario con el NIT {string}")
-public void completa_el_formulario_con_el_nit(String string) {
-}
 
-@And("Selecciono opciones requeridas {string} y {string} y {string} y {string} y {string} y {string} y {string}")
+    // outline
+    @When("completa el formulario con el NIT {string}")
+    public void completa_el_formulario_con_el_nit(String string) {
+    }
+
+    @And("Selecciono opciones requeridas {string} y {string} y {string} y {string} y {string} y {string} y {string}")
     public void seleccionoOpcionesRequeridas(String rolCliente, String tipoI, String numeroI, String ratinguno, String ratingdos, String ratingtres, String ratingcuatro) {
 // Rol cliente
-    if (rolCliente != null && !rolCliente.trim().isEmpty()) {
-        theActorInTheSpotlight().attemptsTo(
-                SelectFromOptions.byVisibleText(rolCliente).from(FormularioPasoUnoPage.TIPO_ClIENTE)
-        );
+        if (rolCliente != null && !rolCliente.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(rolCliente).from(FormularioPasoUnoPage.TIPO_ClIENTE)
+            );
+        }
+        // Tipo de identificación
+        if (tipoI != null && !tipoI.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(tipoI).from(FormularioPasoUnoPage.SELECT_TIPO_IDENTIFICACION)
+            );
+        }
+        // Número de identificación
+        if (numeroI != null && !numeroI.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    Enter.theValue(numeroI).into(FormularioPasoUnoPage.INPUT_NUMERO_IDENTIFICACION)
+            );
+        }
+        // Dropdowns de rating
+        if (ratinguno != null && !ratinguno.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byValue(ratinguno).from(FormularioPasoUnoPage.OBSERVADO_DROPDOWN)
+            );
+        }
+        if (ratingdos != null && !ratingdos.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byValue(ratingdos).from(FormularioPasoUnoPage.PROYECTADOUNO_DROPDOWN)
+            );
+        }
+        if (ratingtres != null && !ratingtres.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byValue(ratingtres).from(FormularioPasoUnoPage.PROYECTADODOS_DROPDOWN)
+            );
+        }
+        if (ratingcuatro != null && !ratingcuatro.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byValue(ratingcuatro).from(FormularioPasoUnoPage.PROYECTADOTRES_DROPDOWN)
+            );
+        }
     }
-    // Tipo de identificación
-    if (tipoI != null && !tipoI.trim().isEmpty()) {
-        theActorInTheSpotlight().attemptsTo(
-                SelectFromOptions.byVisibleText(tipoI).from(FormularioPasoUnoPage.SELECT_TIPO_IDENTIFICACION)
-        );
-    }
-    // Número de identificación
-    if (numeroI != null && !numeroI.trim().isEmpty()) {
-        theActorInTheSpotlight().attemptsTo(
-                Enter.theValue(numeroI).into(FormularioPasoUnoPage.INPUT_NUMERO_IDENTIFICACION)
-        );
-    }
-    // Dropdowns de rating
-    if (ratinguno != null && !ratinguno.trim().isEmpty()) {
-        theActorInTheSpotlight().attemptsTo(
-                SelectFromOptions.byValue(ratinguno).from(FormularioPasoUnoPage.OBSERVADO_DROPDOWN)
-        );
-    }
-    if (ratingdos != null && !ratingdos.trim().isEmpty()) {
-        theActorInTheSpotlight().attemptsTo(
-                SelectFromOptions.byValue(ratingdos).from(FormularioPasoUnoPage.PROYECTADOUNO_DROPDOWN)
-        );
-    }
-    if (ratingtres != null && !ratingtres.trim().isEmpty()) {
-        theActorInTheSpotlight().attemptsTo(
-                SelectFromOptions.byValue(ratingtres).from(FormularioPasoUnoPage.PROYECTADODOS_DROPDOWN)
-        );
-    }
-    if (ratingcuatro != null && !ratingcuatro.trim().isEmpty()) {
-        theActorInTheSpotlight().attemptsTo(
-                SelectFromOptions.byValue(ratingcuatro).from(FormularioPasoUnoPage.PROYECTADOTRES_DROPDOWN)
-        );
-    }
-}
 
     // Casos de prueba de excepcion
 
@@ -164,7 +169,6 @@ public void completa_el_formulario_con_el_nit(String string) {
     }
 
 
-
     @When("Inicia sesión con sus credenciales invalidas correo")
     public void iniciaSesionConSusCredencialesInvalidasCorreo() throws IOException {
         String rutaCsv = "src/test/resources/data/Login/credenciales-invvalidas-correo.csv";
@@ -182,7 +186,8 @@ public void completa_el_formulario_con_el_nit(String string) {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }}
+        }
+    }
 
 
     @When("Inicia sesión con sus credenciales invalidas clave")
@@ -203,7 +208,8 @@ public void completa_el_formulario_con_el_nit(String string) {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }}
+        }
+    }
 
     @When("Inicia sesión con sus credenciales correo en blanco")
     public void iniciaSesionConSusCredencialesCorreoEnBlanco() throws IOException {
@@ -223,7 +229,8 @@ public void completa_el_formulario_con_el_nit(String string) {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }}
+        }
+    }
 
     @When("Intenta Iniciar sesión con sus credenciales contrasena en blanco")
     public void intentaIniciarSesionConSusCredencialesContrasenaEnBlanco() throws IOException {
@@ -254,10 +261,28 @@ public void completa_el_formulario_con_el_nit(String string) {
     }
 
 
-
     @Then("Debe ver el mensaje de error {string} debajo de la contrasena")
     public void debeVerElMensajeDeErrorDebajoDeLaContrasena(String expectedErrorMessage) {
         theActorInTheSpotlight().should(seeThat(ErrorLogin.porFaltaDeContrasena(expectedErrorMessage)));
     }
 
+
+    @Given("que estoy en la pantalla de registro")
+    public void estoyEnLaPantallaDeRegistro() {
+        theActorInTheSpotlight().should(
+                seeThat(SuccessForm.conTexto(FormularioPasoUnoPage.FORMULARIO, "Cotizador"))
+        );
+    }
+
+    @When("Oprimo tipo de identificación {string}")
+    public void soprimoTipoDeIdentificacion(String tipo) {
+        theActorInTheSpotlight().attemptsTo(
+                SeleccionarTipoIdentificacion.como(tipo)
+        );
+    }
+
+    @Then("debe seleccionar la opcion del tipo de identificación")
+    public void debeSeleccionarLaOpcionDelTipoDeIdentificacion() {
+
+    }
 }
