@@ -275,7 +275,7 @@ public class LoginPageDefinitions {
     }
 
     @When("Oprimo tipo de identificación {string}")
-    public void soprimoTipoDeIdentificacion(String tipo) {
+    public void oprimoTipoDeIdentificacion(String tipo) {
         theActorInTheSpotlight().attemptsTo(
                 SeleccionarTipoIdentificacion.como(tipo)
         );
@@ -285,4 +285,47 @@ public class LoginPageDefinitions {
     public void debeSeleccionarLaOpcionDelTipoDeIdentificacion() {
 
     }
+
+    @When("elijo el tipo de identificación {string}")
+    public void elijoTipoDeIdentificacion(String tipo) {
+        theActorInTheSpotlight().attemptsTo(
+                SeleccionarTipoIdentificacion.como(tipo)
+        );
+    }
+
+    @When("redacto el numero de identificacion {string}")
+    public void redactoElNumeroDeIdentificacion(String numero) {
+        theActorInTheSpotlight().attemptsTo(
+                IngresarNumeroIdentificacion.con(numero)
+        );
+    }
+
+    @Then("debe escribir el numero de identificacion")
+    public void debeescribirelNumeroDeIdentificacion() {
+    }
+
+    @Given("copio el numero de identificacion {string}")
+    public void copioElNumeroDeIdentificacion(String numero) {
+        theActorInTheSpotlight().attemptsTo(
+                IngresarNumeroIdentificacion.con(numero)
+        );
+    }
+
+    @When("selecciono la opción de rol de cliente {string}")
+    public void SeleccionoLaOpcionDeRolDeCliente(String rolCliente) {
+        if (rolCliente != null && !rolCliente.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(rolCliente).from(FormularioPasoUnoPage.TIPO_ClIENTE)
+            );
+        }
+    }
+
+    @Then("el sistema debe registrar correctamente el rol seleccionado")
+    public void elSistemaDebeRegistrarCorrectamenteElRolSeleccionado() {
+    }
+
+
+
+
+
 }
