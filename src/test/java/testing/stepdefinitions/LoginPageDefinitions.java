@@ -286,7 +286,7 @@ public class LoginPageDefinitions {
 
     }
 
-    @When("elijo el tipo de identificación {string}")
+    @Given("elijo el tipo de identificación {string}")
     public void elijoTipoDeIdentificacion(String tipo) {
         theActorInTheSpotlight().attemptsTo(
                 SeleccionarTipoIdentificacion.como(tipo)
@@ -304,14 +304,21 @@ public class LoginPageDefinitions {
     public void debeescribirelNumeroDeIdentificacion() {
     }
 
-    @Given("copio el numero de identificacion {string}")
-    public void copioElNumeroDeIdentificacion(String numero) {
+
+    @Given("tomo el tipo de identificación {string}")
+    public void tomoTipoDeIdentificacion(String tipo) {
+        theActorInTheSpotlight().attemptsTo(
+                SeleccionarTipoIdentificacion.como(tipo)
+        );
+    }
+
+    @When("copi el numero de identificacion {string}")
+    public void copiElNumeroDeIdentificacion(String numero) {
         theActorInTheSpotlight().attemptsTo(
                 IngresarNumeroIdentificacion.con(numero)
         );
     }
-
-    @When("selecciono la opción de rol de cliente {string}")
+    @And("selecciono la opción de rol de cliente {string}")
     public void SeleccionoLaOpcionDeRolDeCliente(String rolCliente) {
         if (rolCliente != null && !rolCliente.trim().isEmpty()) {
             theActorInTheSpotlight().attemptsTo(
@@ -320,12 +327,229 @@ public class LoginPageDefinitions {
         }
     }
 
+    @Then("el sistema debe registrar correctamente el rating seleccionado")
+    public void elSistemaDebeRegistrarCorrectamenteElRatingSeleccionado() {
+    }
+
     @Then("el sistema debe registrar correctamente el rol seleccionado")
     public void elSistemaDebeRegistrarCorrectamenteElRolSeleccionado() {
+    }
+
+    @And("selecciono opciones {string} y {string}")
+    public void seleccionoOpciones(String rolCliente, String tipoI) {
+      // Rol cliente
+        if (rolCliente != null && !rolCliente.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(rolCliente).from(FormularioPasoUnoPage.TIPO_ClIENTE)
+            );
+        }
+        // Tipo de identificación
+        if (tipoI != null && !tipoI.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(tipoI).from(FormularioPasoUnoPage.SELECT_TIPO_IDENTIFICACION)
+            );
+        }
+    }
+
+
+    @And("selecciono opciones num {string} y {string} y {string}")
+    public void seleccionoOpcionesNum(String rolCliente, String tipoI, String numeroI) {
+        // Rol cliente
+        if (rolCliente != null && !rolCliente.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(rolCliente).from(FormularioPasoUnoPage.TIPO_ClIENTE)
+            );
+        }
+        // Tipo de identificación
+        if (tipoI != null && !tipoI.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(tipoI).from(FormularioPasoUnoPage.SELECT_TIPO_IDENTIFICACION)
+            );
+        }
+        // Número de identificación
+        if (numeroI != null && !numeroI.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    Enter.theValue(numeroI).into(FormularioPasoUnoPage.INPUT_NUMERO_IDENTIFICACION)
+            );
+        }
+    }
+
+    @And("selecciono opciones ratinguno {string} y {string} y {string} y {string}")
+    public void seleccionoOpcionesuno(String rolCliente, String tipoI, String numeroI, String ratinguno) {
+        // Rol cliente
+        if (rolCliente != null && !rolCliente.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(rolCliente).from(FormularioPasoUnoPage.TIPO_ClIENTE)
+            );
+        }
+        // Tipo de identificación
+        if (tipoI != null && !tipoI.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(tipoI).from(FormularioPasoUnoPage.SELECT_TIPO_IDENTIFICACION)
+            );
+        }
+        // Número de identificación
+        if (numeroI != null && !numeroI.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    Enter.theValue(numeroI).into(FormularioPasoUnoPage.INPUT_NUMERO_IDENTIFICACION)
+            );
+        }
+        //Rating Uno
+        if (ratinguno != null && !ratinguno.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byValue(ratinguno).from(FormularioPasoUnoPage.OBSERVADO_DROPDOWN)
+            );
+        }
+
+    }
+
+    @And("selecciono opciones ratingdos {string} y {string} y {string} y {string} y {string}")
+    public void seleccionoOpcionesdos(String rolCliente, String tipoI, String numeroI, String ratinguno, String ratingdos) {
+        // Rol cliente
+        if (rolCliente != null && !rolCliente.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(rolCliente).from(FormularioPasoUnoPage.TIPO_ClIENTE)
+            );
+        }
+        // Tipo de identificación
+        if (tipoI != null && !tipoI.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(tipoI).from(FormularioPasoUnoPage.SELECT_TIPO_IDENTIFICACION)
+            );
+        }
+        // Número de identificación
+        if (numeroI != null && !numeroI.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    Enter.theValue(numeroI).into(FormularioPasoUnoPage.INPUT_NUMERO_IDENTIFICACION)
+            );
+        }
+        //Rating Uno
+        if (ratinguno != null && !ratinguno.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byValue(ratinguno).from(FormularioPasoUnoPage.OBSERVADO_DROPDOWN)
+            );
+        }
+
+        //Rating Dos
+        if (ratingdos != null && !ratingdos.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byValue(ratingdos).from(FormularioPasoUnoPage.PROYECTADOUNO_DROPDOWN)
+            );
+        }
+    }
+    @And("selecciono opciones ratingtres {string} y {string} y {string} y {string} y {string} y {string}")
+    public void seleccionoOpcionesdos(String rolCliente, String tipoI, String numeroI, String ratinguno, String ratingdos, String ratingtres) {
+        // Rol cliente
+        if (rolCliente != null && !rolCliente.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(rolCliente).from(FormularioPasoUnoPage.TIPO_ClIENTE)
+            );
+        }
+        // Tipo de identificación
+        if (tipoI != null && !tipoI.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(tipoI).from(FormularioPasoUnoPage.SELECT_TIPO_IDENTIFICACION)
+            );
+        }
+        // Número de identificación
+        if (numeroI != null && !numeroI.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    Enter.theValue(numeroI).into(FormularioPasoUnoPage.INPUT_NUMERO_IDENTIFICACION)
+            );
+        }
+        //Rating Uno
+        if (ratinguno != null && !ratinguno.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byValue(ratinguno).from(FormularioPasoUnoPage.OBSERVADO_DROPDOWN)
+            );
+        }
+
+        //Rating Dos
+        if (ratingdos != null && !ratingdos.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byValue(ratingdos).from(FormularioPasoUnoPage.PROYECTADOUNO_DROPDOWN)
+            );
+        }
+         //Rating Tres
+        if (ratingtres != null && !ratingtres.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byValue(ratingtres).from(FormularioPasoUnoPage.PROYECTADODOS_DROPDOWN)
+            );
+        }
     }
 
 
 
 
 
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-@all
+@completo
 Feature: Inicio de sesión y acceso a Pricing
 # Caso 5
   Background:
@@ -10,7 +10,7 @@ Feature: Inicio de sesión y acceso a Pricing
     Then Estoy en la pagina uno de cuatro del cotizador
 
 
-  @ValidCredentialsAndCotizador @ignore
+   @ignore
   Scenario Outline: Registro de formulario uno de cotizador con tipo de identificacion
     # Caso 6
     Given Selecciono la opcion tipo de identificacion "<tipo>"
