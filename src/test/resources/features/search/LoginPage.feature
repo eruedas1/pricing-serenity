@@ -1,4 +1,4 @@
-@completo
+@endtoend
 Feature: Inicio de sesión y acceso a Pricing
 # Caso 5
   Background:
