@@ -10,11 +10,13 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:target/cucumber-reports/cucumber.html"},
         features = {
                 "src/test/resources/features/search/01_PruebasUnitarias.feature",
+                "src/test/resources/features/search/02_PruebasUnitarias.feature",
+
 
         },
         glue = "testing.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@unitarios"
+        tags = "@unitarios or @unitarios1"
 )
 public class CucumberTestSuiteTest {}
 
