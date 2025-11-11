@@ -1,4 +1,5 @@
 package testing.stepdefinitions;
+
 import io.cucumber.java.en.*;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
@@ -11,17 +12,21 @@ import testing.tasks.Background.Cotizador;
 import testing.tasks.Background.Login;
 import testing.tasks.Background.Pricing;
 import testing.tasks.FormularioPasoUno.*;
+import testing.tasks.PasoDosCotizador.EscribValorGarantiaComisioNeg;
+import testing.tasks.PasoDosCotizador.EscribirPasoDos;
+import testing.tasks.PasoDosCotizador.IngresarValorOperacion;
 import testing.ui.Background.PricingPage;
+import testing.ui.Formulario.FormularioPasoDosPage;
 import testing.ui.Formulario.FormularioPasoUnoPage;
 import testing.utils.CsvUtils;
+
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static org.hamcrest.Matchers.is;
 
 
 public class LoginPageDefinitions {
@@ -318,6 +323,7 @@ public class LoginPageDefinitions {
                 IngresarNumeroIdentificacion.con(numero)
         );
     }
+
     @And("selecciono la opción de rol de cliente {string}")
     public void SeleccionoLaOpcionDeRolDeCliente(String rolCliente) {
         if (rolCliente != null && !rolCliente.trim().isEmpty()) {
@@ -337,7 +343,7 @@ public class LoginPageDefinitions {
 
     @And("selecciono opciones {string} y {string}")
     public void seleccionoOpciones(String rolCliente, String tipoI) {
-      // Rol cliente
+        // Rol cliente
         if (rolCliente != null && !rolCliente.trim().isEmpty()) {
             theActorInTheSpotlight().attemptsTo(
                     SelectFromOptions.byVisibleText(rolCliente).from(FormularioPasoUnoPage.TIPO_ClIENTE)
@@ -437,6 +443,7 @@ public class LoginPageDefinitions {
             );
         }
     }
+
     @And("selecciono opciones ratingtres {string} y {string} y {string} y {string} y {string} y {string}")
     public void seleccionoOpcionesdos(String rolCliente, String tipoI, String numeroI, String ratinguno, String ratingdos, String ratingtres) {
         // Rol cliente
@@ -470,7 +477,7 @@ public class LoginPageDefinitions {
                     SelectFromOptions.byValue(ratingdos).from(FormularioPasoUnoPage.PROYECTADOUNO_DROPDOWN)
             );
         }
-         //Rating Tres
+        //Rating Tres
         if (ratingtres != null && !ratingtres.trim().isEmpty()) {
             theActorInTheSpotlight().attemptsTo(
                     SelectFromOptions.byValue(ratingtres).from(FormularioPasoUnoPage.PROYECTADODOS_DROPDOWN)
@@ -478,17 +485,193 @@ public class LoginPageDefinitions {
         }
     }
 
+    @Given("que estoy en la pagina dos del cotizador")
+    public void que_estoy_en_la_pagina_dos_del_cotizador() {
+
+    }
+
+    @When("Registro el valor de la operacion {string}")
+    public void registro_el_valor_de_la_operacion(String valorOperacion) {
+        theActorInTheSpotlight().attemptsTo(
+                IngresarValorOperacion.con(valorOperacion)
+        );
+
+    }
+
+    @Then("Debe escrbir el valor de la operacion")
+    public void Debe_escrbir_el_valor_de_la_operacion() {
+
+    }
+
+    @When("Selecciono el campos sustitucion y prorroga {string}")
+    public void seleccionoElCamposSustitucionYProrroga(String SustiyProrroga) {
+        if (SustiyProrroga != null && !SustiyProrroga.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(SustiyProrroga).from(FormularioPasoDosPage.SUSTITUCION_PRORROGA_DROPDOWN)
+            );
+        }
+    }
+
+    @Then("Debe seleccionar no en el campo sustitucion y prorroga")
+    public void debeSeleccionarNoEnElCampoSustitucionYProrroga() {
+
+    }
+
+    @When("Selecciono el campo tipo de operacion {string}")
+    public void seleccionoElCampoTipoDeOperacion(String tipoOperacion) {
+        if (tipoOperacion != null && !tipoOperacion.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(tipoOperacion).from(FormularioPasoDosPage.TIPO_OPERACION_DROPDOWN)
+            );
+        }
+    }
+
+    @Then("Debe seleccionar constructor en el campo tipo de operacion")
+    public void debeSeleccionarContructorEnElCampoTipoDeOperacion() {
+
+    }
+
+    @When("Selecciono el indice de referencia {string}")
+    public void seleccionoElIndiceDeReferencia(String indiceReferencia) {
+        if (indiceReferencia != null && !indiceReferencia.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(indiceReferencia).from(FormularioPasoDosPage.INDICE_REFERENCIA_DROPDOWN)
+            );
+        }
+    }
+
+    @Then("Debe seleccionar IPC en el campo indice de referencia")
+    public void debeSeleccionarIPCEnElCampoIndiceDeReferencia() {
+
+    }
+
+    @When("Escribo el numero en el campo spread {string}")
+    public void escribo_el_numero_en_el_campo_spread(String spread) {
+        theActorInTheSpotlight().attemptsTo(
+                EscribirPasoDos.soloSpread(spread)
+        );
+
+    }
+
+    @Then("El sistema registra el numero spread correctamente")
+    public void elSistemaRegistraElNumeroSpreadCorrectamente() {
+    }
+
+    @When("Escribo el plazo en meses {string}")
+    public void escribo_el_plazo_en_meses(String plazoMeses) {
+        theActorInTheSpotlight().attemptsTo(
+                EscribirPasoDos.soloPlazo(plazoMeses));
+    }
+
+    @Then("El sistema registra el plazo en meses correctamente")
+    public void elSistemaRegistraElPlazoEnMesesCorrectamente() {
+
+    }
+
+    @When("Escribo el periodo de gracia en meses {string}")
+    public void escribo_el_periodo_de_gracia_en_meses(String periodoGraciaEnMeses) {
+        theActorInTheSpotlight().attemptsTo(
+                EscribirPasoDos.soloPeriodo(periodoGraciaEnMeses));
+    }
+
+    @Then("El sistema registra el periodo de gracia en meses correctamente")
+    public void elSistemaRegistraElPeriodoDeGraciaEnMesesCorrectamente() {
+
+    }
+
+    @When("Selecciono el campo periodicidad de pago de intereses {string}")
+    public void selecciono_el_campo_periodicidad_de_pago_de_intereses(String periodicidadPagoDeIntereses) {
+        if (periodicidadPagoDeIntereses != null && !periodicidadPagoDeIntereses.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(periodicidadPagoDeIntereses).from(FormularioPasoDosPage.PERIODICIDAD_INTERES_DROPDOWN)
+            );
+        }
+    }
+
+    @Then("Selecciona el campo periodicidad pago de intereses correctamente")
+    public void seleccionaElCampoPeriodicidadPagoDeInteresCorrectamente() {
 
 
+    }
 
+    @When("Selecciono el campo amortizacion de capital {string}")
+    public void selecciono_el_campo_amortizacion_de_capital(String amortizacionDeCapital) {
+        if (amortizacionDeCapital != null && !amortizacionDeCapital.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(amortizacionDeCapital).from(FormularioPasoDosPage.AMORTIZACION_CAPITAL_DROPDOWN)
+            );
+        }
+    }
 
+    @Then("Selecciona el campo amortizaion de capital correctamente")
+    public void seleccionaElCampoAmortizaionDeCapitalCorrectamente() {
 
+    }
 
+    @When("Selecciono el tipo de garantia {string}")
+    public void selecciono_el_tipo_de_garantia(String tipoDeGarantia) {
+        if (tipoDeGarantia != null && !tipoDeGarantia.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(tipoDeGarantia).from(FormularioPasoDosPage.TIPO_GARANTIA_DROPDOWN)
+            );
+        }
+    }
 
+    @Then("Selecciona el tipo de garantia correctamente")
+    public void seleccionaElTipoDeGarantiaCorrectamente() {
+    }
 
+    @When("Escribo el valor de la garantia {string}")
+    public void escriboElValorDeLaGarantia(String valorGarantia) {
+        theActorInTheSpotlight().attemptsTo(
+                EscribValorGarantiaComisioNeg.soloValorGarantia(valorGarantia)
+        );
 
+    }
 
+    @Then("El valor de la garantia se registra correctamente")
+    public void elValorDeLaGarantiaSeRegistraCorrectamente() {
+
+    }
+
+    @When("Escribo el porcentaje de comisiones negociadas {string}")
+    public void escriboElPorcentajeDeComisionesNegociadas(String comisionesNegociadas) {
+        theActorInTheSpotlight().attemptsTo(
+                EscribValorGarantiaComisioNeg.soloComisiones(comisionesNegociadas)
+        );
+    }
+
+    @Then("Se registra el porcentaje de comisiones negociadas correctamente")
+    public void seRegistraElPorcentajeDeComisionesNegociadasCorrectamente() {
+
+    }
+
+    @When("Selecciono el campo corresponde a una campana {string}")
+    public void seleccionoElCampoCorrespondeAUnaCampana(String correspondeCampana) {
+        if (correspondeCampana != null && !correspondeCampana.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byVisibleText(correspondeCampana).from(FormularioPasoDosPage.CORRESPONDE_CAMPANA_DROPDOWN)
+            );
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

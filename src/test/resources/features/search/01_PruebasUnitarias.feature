@@ -9,8 +9,6 @@ Feature: Inicio de sesión y acceso a Pricing
     And Debe darle click al boton de cotizador
     Then Estoy en la pagina uno de cuatro del cotizador
 
-
-
   Scenario: Seleccionar tipo de identificación - Cédula de Ciudadanía  ##Caso 1
     Given que estoy en la pantalla de registro
     When Oprimo tipo de identificación "Cédula de Ciudadanía"
@@ -65,9 +63,16 @@ Feature: Inicio de sesión y acceso a Pricing
     And Selecciono opciones requeridas "Consorcio" y "Nit" y "9011654024" y "1" y "9" y "5" y "4"
     Then el sistema debe registrar correctamente el rating seleccionado
 
+
   Scenario: Boton de cargar y continuar  #Caso 10
     Given tomo el tipo de identificación "Nit"
     When copi el numero de identificacion "9011654024"
     And Selecciono opciones requeridas "Consorcio" y "Nit" y "9011654024" y "1" y "9" y "5" y "4"
     And Debe realizar el flujo de cargar información y continuar
     Then el sistema debe registrar correctamente el rating seleccionado
+
+
+
+
+
+
