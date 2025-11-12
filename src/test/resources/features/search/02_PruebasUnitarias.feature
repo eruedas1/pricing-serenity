@@ -1,7 +1,7 @@
 @unitarios1
 Feature: Flujo de cargar información y continuar
 
-  Background:
+  Background: #caso 34
     Given "User" abre la página web
     When Inicia sesion con sus credenciales
     And Debe iniciar sesion correctamente
@@ -118,15 +118,93 @@ Feature: Flujo de cargar información y continuar
     Then Doy click en continuar
 
 
+    #Caso 35
+  Scenario: Selecciono corresponde a una campana
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    Then Clickeo el radiobutton con el texto  Cotizacion
+
+ #Caso 36
+  Scenario: Selecciono corresponde a una campana
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    And Oprimo el radiobutton con el texto  Cotizacion
+    Then Clickeo en el boton Guardar y continuar del paso tres
+
+     #Caso 37
+  Scenario: Selecciono corresponde a una campana
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    And Oprimo el radiobutton con el texto  Cotizacion
+    And Clickeo en el boton Guardar y continuar del paso tres
+    Then Escribo un comentario opcional
+
+     #Caso 38
+  Scenario: Selecciono corresponde a una campana
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    And Oprimo el radiobutton con el texto  Cotizacion
+    And Clickeo en el boton Guardar y continuar del paso tres
+    And Copio un comentario opcional
+    Then Doy nuevamente click al boton Guardar y Continuar del paso dos
+
+     #Caso 39
+  Scenario: Selecciono corresponde a una campana
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    And Oprimo el radiobutton con el texto  Cotizacion
+    And Clickeo en el boton Guardar y continuar del paso tres
+    And Copio un comentario opcional
+    And Doy nuevamente click al boton Guardar y Continuar del paso dos
+    Then Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
 
 
-
-
-
-
-
-
-
+         #Caso 40
+  Scenario: Selecciono corresponde a una campana
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    And Oprimo el radiobutton con el texto  Cotizacion
+    And Clickeo en el boton Guardar y continuar del paso tres
+    And Copio un comentario opcional
+    And Doy nuevamente click al boton Guardar y Continuar del paso dos
+    And Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
+    Then Clickeo el campo Tipo operacion "Bancoldex"
 
 
 

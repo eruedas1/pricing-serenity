@@ -1,7 +1,7 @@
 @endtoend
 Feature: Inicio de sesión y acceso a Pricing
-# Caso 5
-  Background:
+
+  Background: ## caso 24
     Given "User" abre la página web
     When Inicia sesion con sus credenciales
     And Debe iniciar sesion correctamente
@@ -10,16 +10,16 @@ Feature: Inicio de sesión y acceso a Pricing
     Then Estoy en la pagina uno de cuatro del cotizador
 
 
-   @ignore
+
   Scenario Outline: Registro de formulario uno de cotizador con tipo de identificacion
-    # Caso 6
+    # Caso 25
     Given Selecciono la opcion tipo de identificacion "<tipo>"
     When Escribo el numero de identificacion "<numero>"
     And Selecciono opciones requeridas "<rolCliente>" y "<tipoI>" y "<numeroI>" y "<ratinguno>" y "<ratingdos>" y "<ratingtres>" y "<ratingcuatro>"
     And Debe realizar el flujo de cargar información y continuar
     Then Estoy en la pagina dos de cuatro del cotizador
 
-    #Caso 7
+    #Caso 26
     Given Escribo el valor operacion "<valorOperacion>"
     When Selecciono todos los campos del paso dos "<SustiyProrroga>" y "<tipoOperacion>" y "<indiceReferencia>"
     And Escribo en los campos requeridos "<spread>" y "<plazoMeses>" y "<periodoGraciaEnMeses>"
@@ -28,19 +28,19 @@ Feature: Inicio de sesión y acceso a Pricing
     And Selecciono en el campo "<correspondeCampana>"
     Then Doy click en continuar
 
-    # Caso 8
+    # Caso 27
     Given Selecciono el radiobutton con el texto  Cotizacion
     When Doy click en el boton Guardar y continuar del paso tres
     And Escribo un comentario opcional
     Then Doy nuevamente click al boton Guardar y Continuar
 
-    # Caso 9
+    # Caso 28
     Given Selecciono la opcion de Semaforo y CIFIN "<Semaforo>" y "<CIFIN>"
     When Selecciono el campo Tipo operacion "<TipoOperacion>"
     And Selecciono la opcion Desembolso "<Desembolso>"
     Then Doy click en el boton Siguiente
 
-    # Caso 10
+    # Caso 29
     Given Selecciono la opcion de Monto y Excepcion "<Monto>" y "<Exepcion>"
     When Escribo en el campo LEA y total utilizado y monto aprobado "<LEA>" y "<TotalUtilizado>" y "<MontoAprobado>"
     And Selecciono la opcion Desembolso Realizo visita comercial y reviso cifin y fecha de corte "<RealizoVisitaComercial>" y "<RevisoCifin>" y "<FechadeCorte>"
