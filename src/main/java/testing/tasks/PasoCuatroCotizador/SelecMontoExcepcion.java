@@ -23,7 +23,7 @@ public class SelecMontoExcepcion implements Task {
         actor.attemptsTo(
                 SelectFromOptions.byValue(Monto).from(FormularioPasoCuatroPage.SELECT_MONTO),
                 SelectFromOptions.byValue(Exepcion).from(FormularioPasoCuatroPage.SELECT_EXCEPCION)
-                );
+        );
     }
 
     public static SelecMontoExcepcion con(String Monto, String Exepcion) {

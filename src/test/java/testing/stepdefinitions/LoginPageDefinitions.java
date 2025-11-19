@@ -1,8 +1,8 @@
 package testing.stepdefinitions;
 
+import net.serenitybdd.screenplay.actions.*;
+import testing.tasks.PasoCuatroCotizador.*;
 import io.cucumber.java.en.*;
-import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import testing.questions.ErrorLogin;
@@ -12,13 +12,18 @@ import testing.tasks.Background.Cotizador;
 import testing.tasks.Background.Login;
 import testing.tasks.Background.Pricing;
 import testing.tasks.FormularioPasoUno.*;
+import testing.tasks.PasoCuatroCotizador.SelecMontoExcepcion;
 import testing.tasks.PasoDosCotizador.EscribValorGarantiaComisioNeg;
 import testing.tasks.PasoDosCotizador.EscribirPasoDos;
 import testing.tasks.PasoDosCotizador.IngresarValorOperacion;
 import testing.ui.Background.PricingPage;
+import testing.ui.Formulario.FormularioPasoCuatroPage;
 import testing.ui.Formulario.FormularioPasoDosPage;
 import testing.ui.Formulario.FormularioPasoUnoPage;
 import testing.utils.CsvUtils;
+import net.serenitybdd.screenplay.actions.SelectFromOptions;
+import testing.ui.Formulario.FormularioPasoCuatroPage;
+import net.serenitybdd.screenplay.actions.SelectFromOptions;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -653,8 +658,80 @@ public class LoginPageDefinitions {
                     SelectFromOptions.byVisibleText(correspondeCampana).from(FormularioPasoDosPage.CORRESPONDE_CAMPANA_DROPDOWN)
             );
         }
+
+    }
+
+    @Then("Selecciono la opcion de Monto {string}")
+    public void seleccionoLaOpcionDeMonto(String Monto) {
+        if (Monto != null && !Monto.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byValue(Monto).from(FormularioPasoCuatroPage.SELECT_MONTO)
+            );
+        }
+    }
+
+    @Then("Selecciono la opcion de Excepcion {string}")
+    public void seleccionoLaOpcionDeExcepcion(String Excepcion) {
+        if (Excepcion != null && !Excepcion.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byValue(Excepcion).from(FormularioPasoCuatroPage.SELECT_EXCEPCION)
+            );
+        }
+
+    }
+
+    @Then("Escribo en el campo LEA  {string}")
+    public void escribo_en_el_campo_lea(String LEA) {
+        theActorInTheSpotlight().attemptsTo(
+                EscribirLeaTotalMonto.soloLea(LEA)
+        );
+    }
+
+    @Then("Escribo en el campo total utilizado {string}")
+    public void escriboEnElCampoTotalUtilizado(String TotalUtilizado) {
+        theActorInTheSpotlight().attemptsTo(
+                EscribirLeaTotalMonto.soloTotalUtilizado(TotalUtilizado));
+    }
+
+    @Then("Escribo en el campo monto aprobado {string}")
+    public void escriboEnElCampoMontoAprobado(String MontoAprobado) {
+        theActorInTheSpotlight().attemptsTo(
+                EscribirLeaTotalMonto.soloMontoAprobado(MontoAprobado));
+
+    }
+
+    @Then("Selecciono la opcion Desembolso Realizo visita comercial {string}")
+    public void seleccionoLaOpcionDesembolsoRealizoVisitaComercial(String RealizoVisitaComercial) {
+        if (RealizoVisitaComercial != null && !RealizoVisitaComercial.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byValue(RealizoVisitaComercial).from(FormularioPasoCuatroPage.SELECT_REALIZO_VISITA)
+            );
+        }
+
+    }
+
+    @Then("Selecciono la opcion reviso CIFIN {string}")
+    public void seleccionoLaOpcionRevisoCIFIN(String RevisoCifin) {
+        if (RevisoCifin != null && !RevisoCifin.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    SelectFromOptions.byValue(RevisoCifin).from(FormularioPasoCuatroPage.SELECT_REVISO_CIFIN)
+            );
+        }
+
+    }
+    @Then("Selecciono la fecha de corte {string}")
+    public void seleccionoLaFechaDeCorte(String FechadeCorte) {
+        if (FechadeCorte != null && !FechadeCorte.trim().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(
+                    Click.on(FormularioPasoCuatroPage.SELECT_FECHA_CORTE),
+                    Enter.theValue(FechadeCorte).into(FormularioPasoCuatroPage.SELECT_FECHA_CORTE)
+            );
+        }
     }
 }
+
+
+
 
 
 
