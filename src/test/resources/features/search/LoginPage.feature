@@ -50,7 +50,7 @@ Feature: Inicio de sesión y acceso a Pricing
 
     Examples:
       | tipo                  | numero     | rolCliente                  | tipoI    | numeroI    | ratinguno | ratingdos | ratingtres | ratingcuatro | valorOperacion | SustiyProrroga | tipoOperacion | indiceReferencia | spread | plazoMeses |periodoGraciaEnMeses |periodicidadPagoDeIntereses |amortizacionDeCapital |tipoDeGarantia |valorGarantia |comisionesNegociadas |correspondeCampana | Semaforo | CIFIN | TipoOperacion | Desembolso |Monto|Exepcion|LEA    |TotalUtilizado|MontoAprobado|RealizoVisitaComercial|RevisoCifin|FechadeCorte|
-      | Nit                   | 9011654024 | Consorcio                   | Nit      | 9011654024 | 1         | 9         | 5          | 4            | 100000000      | No             | Constructor   | IPC              | 3      | 36         |0                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 | Amarillo | A     |Bancoldex     | Nuevo       |No   | No     |1000000|  1000000     |1000000      |Si                    |Si         |30/10/2025  |
+      | Nit                   | 9011654024 | Consorcio                   | Nit      | 9011654024 | 1         | 9         | 5          | 4            | 100000000      | No             | Constructor   | IPC              | 3      | 36         |0                    |Mensual                     |Mensual               |Constructor    |10000000      |5                    |No                 | Amarillo | A     |Bancoldex     | Nuevo       |No   | No     |1000000|  1000000     |1000000      |Si                    |Si         |15/11/2025  |
 
 
 

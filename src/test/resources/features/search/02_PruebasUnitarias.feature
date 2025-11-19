@@ -117,7 +117,6 @@ Feature: Flujo de cargar información y continuar
     And Selecciono el campo corresponde a una campana "No"
     Then Doy click en continuar
 
-
     #Caso 35
   Scenario: Selecciono corresponde a una campana
     Given Registro el valor de la operacion "100000000"
@@ -188,8 +187,7 @@ Feature: Flujo de cargar información y continuar
     And Doy nuevamente click al boton Guardar y Continuar del paso dos
     Then Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
 
-
-         #Caso 40
+ #Caso 40
   Scenario: Selecciono corresponde a una campana
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -205,6 +203,248 @@ Feature: Flujo de cargar información y continuar
     And Doy nuevamente click al boton Guardar y Continuar del paso dos
     And Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
     Then Clickeo el campo Tipo operacion "Bancoldex"
+
+#Caso 41
+  Scenario: Selecciono opcion desembolso
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    And Oprimo el radiobutton con el texto  Cotizacion
+    And Clickeo en el boton Guardar y continuar del paso tres
+    And Copio un comentario opcional
+    And Doy nuevamente click al boton Guardar y Continuar del paso dos
+    And Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
+    And Clickeo el campo Tipo operacion "Bancoldex"
+    Then Selecciono la opcion Desembolso "Nuevo"
+
+#Caso 42
+  Scenario: Selecciono opcion Monto
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    And Oprimo el radiobutton con el texto  Cotizacion
+    And Clickeo en el boton Guardar y continuar del paso tres
+    And Copio un comentario opcional
+    And Doy nuevamente click al boton Guardar y Continuar del paso dos
+    And Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
+    And Clickeo el campo Tipo operacion "Bancoldex"
+    And Selecciono la opcion Desembolso "Nuevo"
+    And Doy click en el boton Siguiente
+    Then Selecciono la opcion de Monto "No"
+
+#Caso 43
+  Scenario: Selecciono opcion Excepcion
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    And Oprimo el radiobutton con el texto  Cotizacion
+    And Clickeo en el boton Guardar y continuar del paso tres
+    And Copio un comentario opcional
+    And Doy nuevamente click al boton Guardar y Continuar del paso dos
+    And Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
+    And Clickeo el campo Tipo operacion "Bancoldex"
+    And Selecciono la opcion Desembolso "Nuevo"
+    And Doy click en el boton Siguiente
+    And Selecciono la opcion de Monto "No"
+    Then Selecciono la opcion de Excepcion "No"
+
+#Caso 44
+  Scenario: Escribo en el campo LEA
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    And Oprimo el radiobutton con el texto  Cotizacion
+    And Clickeo en el boton Guardar y continuar del paso tres
+    And Copio un comentario opcional
+    And Doy nuevamente click al boton Guardar y Continuar del paso dos
+    And Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
+    And Clickeo el campo Tipo operacion "Bancoldex"
+    And Selecciono la opcion Desembolso "Nuevo"
+    And Doy click en el boton Siguiente
+    And Selecciono la opcion de Monto y Excepcion "No" y "No"
+    Then Escribo en el campo LEA  "1000000"
+
+#Caso 45
+  Scenario: Escribo en el campo Total Utilizado
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    And Oprimo el radiobutton con el texto  Cotizacion
+    And Clickeo en el boton Guardar y continuar del paso tres
+    And Copio un comentario opcional
+    And Doy nuevamente click al boton Guardar y Continuar del paso dos
+    And Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
+    And Clickeo el campo Tipo operacion "Bancoldex"
+    And Selecciono la opcion Desembolso "Nuevo"
+    And Doy click en el boton Siguiente
+    And Selecciono la opcion de Monto y Excepcion "No" y "No"
+    And Escribo en el campo LEA  "1000000"
+    Then Escribo en el campo total utilizado "1000000"
+
+#Caso 46
+  Scenario: Escribo en el campo Monto Aprobado
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    And Oprimo el radiobutton con el texto  Cotizacion
+    And Clickeo en el boton Guardar y continuar del paso tres
+    And Copio un comentario opcional
+    And Doy nuevamente click al boton Guardar y Continuar del paso dos
+    And Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
+    And Clickeo el campo Tipo operacion "Bancoldex"
+    And Selecciono la opcion Desembolso "Nuevo"
+    And Doy click en el boton Siguiente
+    And Selecciono la opcion de Monto y Excepcion "No" y "No"
+    And Escribo en el campo LEA  "1000000"
+    And Escribo en el campo total utilizado "1000000"
+    Then Escribo en el campo monto aprobado "1000000"
+
+#Caso 47
+  Scenario: Selecciono Realizo Visita Comercial
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    And Oprimo el radiobutton con el texto  Cotizacion
+    And Clickeo en el boton Guardar y continuar del paso tres
+    And Copio un comentario opcional
+    And Doy nuevamente click al boton Guardar y Continuar del paso dos
+    And Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
+    And Clickeo el campo Tipo operacion "Bancoldex"
+    And Selecciono la opcion Desembolso "Nuevo"
+    And Doy click en el boton Siguiente
+    And Selecciono la opcion de Monto y Excepcion "No" y "No"
+    And Escribo en el campo LEA y total utilizado y monto aprobado "1000000" y "1000000" y "1000000"
+    Then Selecciono la opcion Desembolso Realizo visita comercial "Si"
+
+#Caso 48
+  Scenario: Selecciono Reviso Cifin
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    And Oprimo el radiobutton con el texto  Cotizacion
+    And Clickeo en el boton Guardar y continuar del paso tres
+    And Copio un comentario opcional
+    And Doy nuevamente click al boton Guardar y Continuar del paso dos
+    And Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
+    And Clickeo el campo Tipo operacion "Bancoldex"
+    And Selecciono la opcion Desembolso "Nuevo"
+    And Doy click en el boton Siguiente
+    And Selecciono la opcion de Monto y Excepcion "No" y "No"
+    And Escribo en el campo LEA y total utilizado y monto aprobado "1000000" y "1000000" y "1000000"
+    And Selecciono la opcion Desembolso Realizo visita comercial "Si"
+    Then Selecciono la opcion reviso CIFIN "Si"
+
+#Caso 49
+  Scenario: Selecciono Fecha de Corte
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    And Oprimo el radiobutton con el texto  Cotizacion
+    And Clickeo en el boton Guardar y continuar del paso tres
+    And Copio un comentario opcional
+    And Doy nuevamente click al boton Guardar y Continuar del paso dos
+    And Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
+    And Clickeo el campo Tipo operacion "Bancoldex"
+    And Selecciono la opcion Desembolso "Nuevo"
+    And Doy click en el boton Siguiente
+    And Selecciono la opcion de Monto y Excepcion "No" y "No"
+    And Escribo en el campo LEA y total utilizado y monto aprobado "1000000" y "1000000" y "1000000"
+    And Selecciono la opcion Desembolso Realizo visita comercial "Si"
+    And Selecciono la opcion reviso CIFIN "Si"
+    Then Selecciono la fecha de corte "15/11/2025"
+
+#Caso 50
+  Scenario: Escribir comentario en Observaciones y Recomendacion
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    And Oprimo el radiobutton con el texto  Cotizacion
+    And Clickeo en el boton Guardar y continuar del paso tres
+    And Copio un comentario opcional
+    And Doy nuevamente click al boton Guardar y Continuar del paso dos
+    And Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
+    And Clickeo el campo Tipo operacion "Bancoldex"
+    And Selecciono la opcion Desembolso "Nuevo"
+    And Doy click en el boton Siguiente
+    And Selecciono la opcion de Monto y Excepcion "No" y "No"
+    And Escribo en el campo LEA y total utilizado y monto aprobado "1000000" y "1000000" y "1000000"
+    And Selecciono la opcion Desembolso Realizo visita comercial y reviso cifin y fecha de corte "Si" y "Si" y "15/11/2025"
+    Then Escribo un comentario en Observaciones y Recomendacion
+
+#Caso 51
+  Scenario: Envio correos electronicos
+    Given Registro el valor de la operacion "100000000"
+    When Selecciono el campos sustitucion y prorroga "No"
+    And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
+    And Escribo en los campos requeridos "3" y "36" y "0"
+    And Selecciono todos los campos requeridos "Mensual" y "Mensual" y "Constructor"
+    And Escribo en los siguientes campos "10000000" y "5"
+    And Selecciono el campo corresponde a una campana "No"
+    And Clickeo click en continuar
+    And Oprimo el radiobutton con el texto  Cotizacion
+    And Clickeo en el boton Guardar y continuar del paso tres
+    And Copio un comentario opcional
+    And Doy nuevamente click al boton Guardar y Continuar del paso dos
+    And Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
+    And Clickeo el campo Tipo operacion "Bancoldex"
+    And Selecciono la opcion Desembolso "Nuevo"
+    And Doy click en el boton Siguiente
+    And Selecciono la opcion de Monto y Excepcion "No" y "No"
+    And Escribo en el campo LEA y total utilizado y monto aprobado "1000000" y "1000000" y "1000000"
+    And Selecciono la opcion Desembolso Realizo visita comercial y reviso cifin y fecha de corte "Si" y "Si" y "15/11/2025"
+    And Escribo un comentario en Observaciones y Recomendacion
+    And Doy click en el boton Siguiente para finalizar
+    Then Doy click en continuar correos
 
 
 

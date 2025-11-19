@@ -18,7 +18,10 @@ import org.junit.runner.RunWith;
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         tags = "@unitarios or @unitarios1"
 )
-public class CucumberTestSuiteTest {}
+public class CucumberTestSuiteTest {
+
+}
+
 
 
 
