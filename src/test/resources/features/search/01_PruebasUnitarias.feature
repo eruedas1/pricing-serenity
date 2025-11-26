@@ -11,8 +11,9 @@ Feature: Inicio de sesión y acceso a Pricing
 
   Scenario: Seleccionar tipo de identificación - Cédula de Ciudadanía  ##Caso 1
     Given que estoy en la pantalla de registro
-    When Oprimo tipo de identificación "Cédula de Ciudadanía"
+    When Oprimo tipo de identificación "Cedula de Ciudadanía"
     Then debe seleccionar la opcion del tipo de identificación
+
 
   Scenario: Escribir numero de identificacion Paso 1 ##Caso 2
     Given elijo el tipo de identificación "Cédula de Ciudadanía"
@@ -72,7 +73,52 @@ Feature: Inicio de sesión y acceso a Pricing
     Then el sistema debe registrar correctamente el rating seleccionado
 
 
+  Scenario: Seleccionar tipo de identificación - Cédula de Ciudadanía  ##Caso 11
+    Given que estoy en la pantalla de registro
+    When Oprimo tipo de identificación "Nit"
+    Then debe seleccionar la opcion del tipo de identificación
 
 
+  Scenario: Seleccionar tipo de identificación - Cédula de Ciudadanía  ##Caso 12
+    Given que estoy en la pantalla de registro
+    When Oprimo tipo de identificación "Cédula de Extranjería"
+    Then debe seleccionar la opcion del tipo de identificación
 
+  Scenario: Seleccionar tipo de identificación - Cédula de Ciudadanía  ##Caso 13
+    Given que estoy en la pantalla de registro
+    When Oprimo tipo de identificación "Nit Persona Natural"
+    Then debe seleccionar la opcion del tipo de identificación
 
+  Scenario: Seleccionar tipo de identificación - Cédula de Ciudadanía  ##Caso 14
+    Given que estoy en la pantalla de registro
+    When Oprimo tipo de identificación "Registro Civil"
+    Then debe seleccionar la opcion del tipo de identificación
+
+  Scenario: Seleccionar tipo de identificación - Cédula de Ciudadanía  ##Caso 15
+    Given que estoy en la pantalla de registro
+    When Oprimo tipo de identificación "Nit Persona Extranjera"
+    Then debe seleccionar la opcion del tipo de identificación
+
+  Scenario: Seleccionar el Rol del cliente     ##Caso 16
+    Given tomo el tipo de identificación "Nit"
+    When copi el numero de identificacion "9011654024"
+    And selecciono la opción de rol de cliente " Fideicomiso "
+    Then el sistema debe registrar correctamente el rol seleccionado
+
+  Scenario: Seleccionar el Rol del cliente     ##Caso 17
+    Given tomo el tipo de identificación "Nit"
+    When copi el numero de identificacion "9011654024"
+    And selecciono la opción de rol de cliente "Patrimonio Autonomo"
+    Then el sistema debe registrar correctamente el rol seleccionado
+
+  Scenario: Seleccionar el Rol del cliente     ##Caso 18
+    Given tomo el tipo de identificación "Nit"
+    When copi el numero de identificacion "9011654024"
+    And selecciono la opción de rol de cliente "Union Temporal"
+    Then el sistema debe registrar correctamente el rol seleccionado
+
+  Scenario: Seleccionar el Rol del cliente     ##Caso 19
+    Given tomo el tipo de identificación "Nit"
+    When copi el numero de identificacion "9011654024"
+    And selecciono la opción de rol de cliente "No"
+    Then el sistema debe registrar correctamente el rol seleccionado

@@ -1,7 +1,7 @@
 @unitarios1
 Feature: Flujo de cargar información y continuar
 
-  Background: #caso 34
+  Background: #caso 20
     Given "User" abre la página web
     When Inicia sesion con sus credenciales
     And Debe iniciar sesion correctamente
@@ -14,37 +14,37 @@ Feature: Flujo de cargar información y continuar
     And Debe realizar el flujo de cargar información y continuar
     And Estoy en la pagina dos de cuatro del cotizador
 
-  Scenario: Boton de valor de la operacion  #Caso 11
+  Scenario: Boton de valor de la operacion  #Caso 21
     Given Estoy en la pagina dos de cuatro del cotizador
     When Registro el valor de la operacion "100000000"
     Then Debe escrbir el valor de la operacion
 
-  Scenario: Selecciono sustitucion y prorroga  #Caso 12
+  Scenario: Selecciono sustitucion y prorroga  #Caso 22
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
     Then Debe seleccionar no en el campo sustitucion y prorroga
 
-  Scenario: Selecciono el campo tipo de operacion  #Caso 13
+  Scenario: Selecciono el campo tipo de operacion  #Caso 23
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
     And Selecciono el campo tipo de operacion "Constructor"
     Then Debe seleccionar constructor en el campo tipo de operacion
 
-  Scenario: Selecciono el campo indice de referencia #Caso 14
+  Scenario: Selecciono el campo indice de referencia #Caso 24
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
     And Selecciono el campo tipo de operacion "Constructor"
     And Selecciono el indice de referencia "IPC"
     Then Debe seleccionar IPC en el campo indice de referencia
 
-  Scenario: Escribo el numero en el campo spread #Caso 15
+  Scenario: Escribo el numero en el campo spread #Caso 25
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
     And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
     And Escribo el numero en el campo spread "3"
     Then El sistema registra el numero spread correctamente
 
-  Scenario: Escribo el plazo en meses  #Caso 16
+  Scenario: Escribo el plazo en meses  #Caso 26
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
     And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
@@ -52,7 +52,7 @@ Feature: Flujo de cargar información y continuar
     And Escribo el plazo en meses "36"
     Then El sistema registra el plazo en meses correctamente
 
-  Scenario: Escribo el periodo de gracia en meses  #Caso 17
+  Scenario: Escribo el periodo de gracia en meses  #Caso 27
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
     And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
@@ -61,7 +61,7 @@ Feature: Flujo de cargar información y continuar
     And Escribo el periodo de gracia en meses "0"
     Then El sistema registra el periodo de gracia en meses correctamente
 
-  Scenario: Selecciona periodicidad pago de intereses #Caso 18
+  Scenario: Selecciona periodicidad pago de intereses #Caso 28
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
     And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
@@ -69,7 +69,7 @@ Feature: Flujo de cargar información y continuar
     And Selecciono el campo periodicidad de pago de intereses "Mensual"
     Then Selecciona el campo periodicidad pago de intereses correctamente
 
-  Scenario: Selecciona amortizacion de capital #Caso 19
+  Scenario: Selecciona amortizacion de capital #Caso 29
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
     And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
@@ -78,7 +78,7 @@ Feature: Flujo de cargar información y continuar
     And Selecciono el campo amortizacion de capital "Mensual"
     Then Selecciona el campo amortizaion de capital correctamente
 
-  Scenario: Selecciona el tipo de garantia #Caso 20
+  Scenario: Selecciona el tipo de garantia #Caso 30
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
     And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
@@ -88,7 +88,7 @@ Feature: Flujo de cargar información y continuar
     And Selecciono el tipo de garantia "Constructor"
     Then Selecciona el tipo de garantia correctamente
 
-  Scenario: Escribo el valor de la garantia #Caso 21
+  Scenario: Escribo el valor de la garantia #Caso 31
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
     And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
@@ -97,7 +97,7 @@ Feature: Flujo de cargar información y continuar
     And Escribo el valor de la garantia "10000000"
     Then El valor de la garantia se registra correctamente
 
-  Scenario: Escribo el porcentaje de comisiones negociadas #Caso 22
+  Scenario: Escribo el porcentaje de comisiones negociadas #Caso 32
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
     And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
@@ -107,7 +107,7 @@ Feature: Flujo de cargar información y continuar
     And Escribo el porcentaje de comisiones negociadas "5"
     Then Se registra el porcentaje de comisiones negociadas correctamente
 
-  Scenario: Selecciono corresponde a una campana #Caso 23
+  Scenario: Selecciono corresponde a una campana #Caso 33
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
     And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
@@ -117,8 +117,8 @@ Feature: Flujo de cargar información y continuar
     And Selecciono el campo corresponde a una campana "No"
     Then Doy click en continuar
 
-    #Caso 35
-  Scenario: Selecciono corresponde a una campana
+
+  Scenario: Selecciono corresponde a una campana #Caso 34
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
     And Selecciono todos los campos del paso dos "No" y "Constructor" y "IPC"
@@ -129,7 +129,7 @@ Feature: Flujo de cargar información y continuar
     And Clickeo click en continuar
     Then Clickeo el radiobutton con el texto  Cotizacion
 
- #Caso 36
+ #Caso 35
   Scenario: Selecciono corresponde a una campana
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -142,7 +142,7 @@ Feature: Flujo de cargar información y continuar
     And Oprimo el radiobutton con el texto  Cotizacion
     Then Clickeo en el boton Guardar y continuar del paso tres
 
-     #Caso 37
+     #Caso 36
   Scenario: Selecciono corresponde a una campana
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -156,7 +156,7 @@ Feature: Flujo de cargar información y continuar
     And Clickeo en el boton Guardar y continuar del paso tres
     Then Escribo un comentario opcional
 
-     #Caso 38
+     #Caso 37
   Scenario: Selecciono corresponde a una campana
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -171,7 +171,7 @@ Feature: Flujo de cargar información y continuar
     And Copio un comentario opcional
     Then Doy nuevamente click al boton Guardar y Continuar del paso dos
 
-     #Caso 39
+     #Caso 38
   Scenario: Selecciono corresponde a una campana
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -187,7 +187,7 @@ Feature: Flujo de cargar información y continuar
     And Doy nuevamente click al boton Guardar y Continuar del paso dos
     Then Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
 
- #Caso 40
+ #Caso 39
   Scenario: Selecciono corresponde a una campana
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -204,7 +204,7 @@ Feature: Flujo de cargar información y continuar
     And Clickeo la opcion de Semaforo y Cifin "Amarillo" y "A"
     Then Clickeo el campo Tipo operacion "Bancoldex"
 
-#Caso 41
+#Caso 40
   Scenario: Selecciono opcion desembolso
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -222,7 +222,7 @@ Feature: Flujo de cargar información y continuar
     And Clickeo el campo Tipo operacion "Bancoldex"
     Then Selecciono la opcion Desembolso "Nuevo"
 
-#Caso 42
+#Caso 41
   Scenario: Selecciono opcion Monto
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -242,7 +242,7 @@ Feature: Flujo de cargar información y continuar
     And Doy click en el boton Siguiente
     Then Selecciono la opcion de Monto "No"
 
-#Caso 43
+#Caso 42
   Scenario: Selecciono opcion Excepcion
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -263,7 +263,7 @@ Feature: Flujo de cargar información y continuar
     And Selecciono la opcion de Monto "No"
     Then Selecciono la opcion de Excepcion "No"
 
-#Caso 44
+#Caso 43
   Scenario: Escribo en el campo LEA
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -284,7 +284,7 @@ Feature: Flujo de cargar información y continuar
     And Selecciono la opcion de Monto y Excepcion "No" y "No"
     Then Escribo en el campo LEA  "1000000"
 
-#Caso 45
+#Caso 44
   Scenario: Escribo en el campo Total Utilizado
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -306,7 +306,7 @@ Feature: Flujo de cargar información y continuar
     And Escribo en el campo LEA  "1000000"
     Then Escribo en el campo total utilizado "1000000"
 
-#Caso 46
+#Caso 45
   Scenario: Escribo en el campo Monto Aprobado
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -329,7 +329,7 @@ Feature: Flujo de cargar información y continuar
     And Escribo en el campo total utilizado "1000000"
     Then Escribo en el campo monto aprobado "1000000"
 
-#Caso 47
+#Caso 46
   Scenario: Selecciono Realizo Visita Comercial
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -351,7 +351,7 @@ Feature: Flujo de cargar información y continuar
     And Escribo en el campo LEA y total utilizado y monto aprobado "1000000" y "1000000" y "1000000"
     Then Selecciono la opcion Desembolso Realizo visita comercial "Si"
 
-#Caso 48
+#Caso 47
   Scenario: Selecciono Reviso Cifin
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -374,7 +374,7 @@ Feature: Flujo de cargar información y continuar
     And Selecciono la opcion Desembolso Realizo visita comercial "Si"
     Then Selecciono la opcion reviso CIFIN "Si"
 
-#Caso 49
+#Caso 48
   Scenario: Selecciono Fecha de Corte
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -398,7 +398,7 @@ Feature: Flujo de cargar información y continuar
     And Selecciono la opcion reviso CIFIN "Si"
     Then Selecciono la fecha de corte "15/11/2025"
 
-#Caso 50
+#Caso 49
   Scenario: Escribir comentario en Observaciones y Recomendacion
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -421,7 +421,7 @@ Feature: Flujo de cargar información y continuar
     And Selecciono la opcion Desembolso Realizo visita comercial y reviso cifin y fecha de corte "Si" y "Si" y "15/11/2025"
     Then Escribo un comentario en Observaciones y Recomendacion
 
-#Caso 51
+#Caso 50
   Scenario: Envio correos electronicos
     Given Registro el valor de la operacion "100000000"
     When Selecciono el campos sustitucion y prorroga "No"
@@ -445,6 +445,7 @@ Feature: Flujo de cargar información y continuar
     And Escribo un comentario en Observaciones y Recomendacion
     And Doy click en el boton Siguiente para finalizar
     Then Doy click en continuar correos
+
 
 
 

@@ -1,25 +1,26 @@
 @excep
 Feature: Inicio de sesión y acceso a Pricing
 
- # Caso 30
+
+# Caso 57
 
   Scenario: Inicio de  sesión con correo invalido
     Given "User" abre la página web
     When Inicia sesión con sus credenciales invalidas correo
     Then Debe ver el mensaje de error "Invalid credentials"
- # Caso 31
+ # Caso 58
 
   Scenario: Inicio de  sesión con clave invalida
     Given "User" abre la página web
     When Inicia sesión con sus credenciales invalidas clave
     Then Debe ver el mensaje de error "Invalid credentials"
-# Caso 32
+# Caso 59
 
   Scenario: Inicio de sesión con nombre de usuario en blanco
     Given "User" abre la página web
     When Inicia sesión con sus credenciales correo en blanco
     Then Debe ver el mensaje de error "Required" debajo del nombre de usuario
-# Caso 33
+# Caso 60
 
   Scenario: Inicio de  sesión con clave en blanco
     Given "User" abre la página web
