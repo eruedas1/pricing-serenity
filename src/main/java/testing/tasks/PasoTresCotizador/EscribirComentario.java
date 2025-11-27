@@ -1,9 +1,7 @@
 package testing.tasks.PasoTresCotizador;
-
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Enter;
-
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static testing.ui.Formulario.FormularioPasoTresPage.CAMPO_COMENTARIO;
 

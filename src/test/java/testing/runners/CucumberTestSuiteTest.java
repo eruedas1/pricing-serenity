@@ -9,14 +9,14 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumber-reports/cucumber.html"},
         features = {
-                "src/test/resources/features/search/01_PruebasUnitarias.feature",
+                "src/test/resources/features/search/03_LoginPage.feature",
 
 
 
         },
         glue = "testing.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@unitarios"
+        tags = "@endtoend"
 )
 public class CucumberTestSuiteTest {
 

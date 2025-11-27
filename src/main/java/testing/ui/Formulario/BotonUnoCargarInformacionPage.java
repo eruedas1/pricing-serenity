@@ -4,7 +4,7 @@ import net.thucydides.core.webdriver.shadow.ByShadow;
 import org.openqa.selenium.By;
 
 public class BotonUnoCargarInformacionPage {
-    // Si necesitas el último (cuando desaparece loader):
+
         public static final Target BOTON_CARGAR_INFORMACION_VISIBLE = Target.the("botón cargar")
             .located(ByShadow.cssSelector(
                     "#boton",

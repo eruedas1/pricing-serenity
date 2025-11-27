@@ -13,14 +13,12 @@ public class PasoDosEsVisible implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         try {
-            // Espera hasta que el título sea visible
             actor.attemptsTo(
                     WaitUntil.the(FormularioPasoDosPage.TITULO_PASO_DOS, isCurrentlyVisible()).forNoMoreThan(60).seconds(),
                     Ensure.that(FormularioPasoDosPage.TITULO_PASO_DOS).isDisplayed()
 
             );
 
-            // Debug: imprimir si el elemento se encuentra
             boolean visible = FormularioPasoDosPage.TITULO_PASO_DOS.resolveFor(actor).isVisible();
             System.out.println("Paso 2 visible? " + visible);
             return visible;

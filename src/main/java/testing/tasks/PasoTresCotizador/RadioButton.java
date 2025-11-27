@@ -2,7 +2,6 @@ package testing.tasks.PasoTresCotizador;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static testing.ui.Formulario.FormularioPasoTresPage.RADIOBUTTON;
 

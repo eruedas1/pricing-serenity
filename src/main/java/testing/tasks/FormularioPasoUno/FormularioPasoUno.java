@@ -5,7 +5,6 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import testing.ui.Formulario.FormularioPasoUnoPage;
 
-import static java.lang.Thread.sleep;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
