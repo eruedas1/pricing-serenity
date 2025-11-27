@@ -1,5 +1,4 @@
 package testing.stepdefinitions;
-
 import net.serenitybdd.screenplay.actions.*;
 import testing.tasks.PasoCuatroCotizador.*;
 import io.cucumber.java.en.*;
@@ -12,7 +11,6 @@ import testing.tasks.Background.Cotizador;
 import testing.tasks.Background.Login;
 import testing.tasks.Background.Pricing;
 import testing.tasks.FormularioPasoUno.*;
-import testing.tasks.PasoCuatroCotizador.SelecMontoExcepcion;
 import testing.tasks.PasoDosCotizador.EscribValorGarantiaComisioNeg;
 import testing.tasks.PasoDosCotizador.EscribirPasoDos;
 import testing.tasks.PasoDosCotizador.IngresarValorOperacion;
@@ -22,13 +20,9 @@ import testing.ui.Formulario.FormularioPasoDosPage;
 import testing.ui.Formulario.FormularioPasoUnoPage;
 import testing.utils.CsvUtils;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import testing.ui.Formulario.FormularioPasoCuatroPage;
-import net.serenitybdd.screenplay.actions.SelectFromOptions;
-
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;

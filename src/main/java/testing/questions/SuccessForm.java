@@ -20,20 +20,19 @@ public class SuccessForm implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        // Espera explícita
+
         actor.attemptsTo(
                 WaitUntil.the(elemento, isVisible()).forNoMoreThan(30).seconds(),
                 Ensure.that(elemento).isDisplayed()
         );
 
-        // Si se definió un texto esperado, también validamos
         if (textoEsperado != null) {
             actor.attemptsTo(
                     Ensure.that(elemento).text().contains(textoEsperado)
             );
         }
 
-        return true; // Si llega hasta aquí, la validación fue exitosa
+        return true;
     }
 
     public static SuccessForm con(Target elemento) {

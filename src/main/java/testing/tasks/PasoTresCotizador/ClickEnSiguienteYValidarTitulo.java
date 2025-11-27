@@ -6,9 +6,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-
-import java.time.Duration;
-
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static testing.ui.Formulario.FormularioPasoTresPage.BOTON_SIGUIENTE;
 import static testing.ui.Formulario.FormularioPasoTresPage.TITULO_NIVELES_ATRIBUCION;

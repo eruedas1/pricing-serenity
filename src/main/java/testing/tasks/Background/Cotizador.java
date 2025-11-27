@@ -21,7 +21,7 @@ public class Cotizador implements Task {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
         try {
-            // Cambiar a la nueva ventana
+
             String originalWindow = driver.getWindowHandle();
             Set<String> allWindows = driver.getWindowHandles();
 
@@ -33,7 +33,7 @@ public class Cotizador implements Task {
                 }
             }
 
-            // 👀 Esperar a que el botón esté presente y clickeable
+
             WebElement botonCotizador = wait.until(
                     ExpectedConditions.elementToBeClickable(COTIZADOR)
             );

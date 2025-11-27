@@ -1,19 +1,10 @@
 package testing.stepdefinitions;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import testing.questions.PasoDosEsVisible;
-import testing.tasks.FormularioPasoUno.FlujoCargarYContinuar;
-import testing.tasks.PasoCuatroCotizador.BtnContinuarCorreos;
 import testing.tasks.PasoDosCotizador.*;
 import testing.ui.Formulario.FormularioPasoDosPage;
-import testing.ui.Formulario.FormularioPasoUnoPage;
-
-import static com.google.common.base.Predicates.equalTo;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class PasoDosCotizadorStepDefinitions {

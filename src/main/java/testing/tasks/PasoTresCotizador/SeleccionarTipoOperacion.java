@@ -1,9 +1,7 @@
 package testing.tasks.PasoTresCotizador;
-
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import testing.ui.Formulario.FormularioPasoTresPage;
 

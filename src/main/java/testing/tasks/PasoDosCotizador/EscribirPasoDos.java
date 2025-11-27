@@ -4,8 +4,6 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Enter;
 import testing.ui.Formulario.FormularioPasoDosPage;
 
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
-
 public class EscribirPasoDos implements Task {
 
     private final String spread;

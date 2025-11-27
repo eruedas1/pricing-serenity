@@ -1,10 +1,6 @@
 package testing.stepdefinitions;
 import io.cucumber.java.en.*;
 import testing.tasks.PasoCuatroCotizador.*;
-import testing.tasks.PasoDosCotizador.BtnContinuarDos;
-import testing.tasks.PasoTresCotizador.EscribirComentario;
-
-
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class PasoCuatroStepDefinitions {
